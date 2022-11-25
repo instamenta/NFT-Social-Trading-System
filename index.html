@@ -40,7 +40,7 @@
                         LOGIN
                     </span>
                     <span class="navbar-item">
-                        REGISTER
+                        SIGN-IN
                     </span>
                     <span class="navbar-item">
                         <i class="fa-sharp fa-solid fa-right-to-bracket"></i>
@@ -49,49 +49,152 @@
             </div>
         </nav>
     </header>
-    <section class="flexbox welcome">
+
+<!-- profile page -->
+
+
+<form action="" class="profile-container">
+    <div class="profile-side-container">
+        <img src="./public/images/greenish.jpg" alt="" class="profile-page-picture">
+        <h1 class="profile-page">
+            Stefan Stambolov
+        </h1>
+        <h2 class="profile-page">
+            age: 21
+        </h2>
+        <h2 class="profile-page">
+            birthday: 11.11.2011
+        </h2>
+        <h2 class="profile-page">
+            joined: 11.11.2022
+        </h2>
+        <h2 class="profile-page">
+            email: stefanStambolov@gmail.com
+        </h2>
+    </div>
+    <div class="profile-side-container notOwner" id="notOwner"></div>
+</form>
+
+
+<!-- profile page end -->
+<!-- login/register -->
+<!-- 
+<div class="auth-form">
+<div class="container-auth" id="container">
+	<div class="form-container sign-up-container">
+		<form class="auth-form" action="#">
+			<h1 class="auth">Create Account</h1>
+			<div class="social-container">
+				<a href="#" class="social auth"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social auth"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social auth"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span class="auth">or use your email for registration</span>
+			<input class="auth sign-up" type="text" placeholder="Name" />
+			<input class="auth sign-up " type="email" placeholder="Email" />
+			<input class="auth sign-up" type="password" placeholder="Password" />
+			<button class="auth" >Sign Up</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form action="#" class="auth">
+			<h1 class="auth">Sign in</h1>
+			<div class="social-container">
+				<a class="auth" href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a class="auth" href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a class="auth" href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span class="auth">or use your account</span>
+			<input class="auth " type="email" placeholder="Email" />
+			<input class="auth " type="password" placeholder="Password" />
+			<a class="auth" href="#">Forgot your password?</a>
+			<button class="auth">Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1 class="auth">Welcome Back!</h1>
+				<p class="auth">To keep connected with us please login with your personal info</p>
+				<button class="ghost auth" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1 class="auth">Hello, Friend!</h1>
+				<p class="auth">Enter your personal details and start journey with us</p>
+				<button class="ghost auth" id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
+<script>
+    const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
+
+signUpButton.addEventListener('click', () => {
+	container.classList.add("right-panel-active");
+});
+
+signInButton.addEventListener('click', () => {
+	container.classList.remove("right-panel-active");
+});
+</script> -->
+
+    <!-- 404 -->
+    <!-- <div class="not-found">
+        
+        <div class="error">404</div>
+        <br /><br />
+        <span class="info">File not found</span>
+        <img src="http://images2.layoutsparks.com/1/160030/too-much-tv-static.gif" class="static" />
+        
+    </div> -->
+   <!-- 404 -->
+    <!-- <section class="flexbox welcome">
         <div class="art-background welcome-container">
             <h1 class="welcome-text awesome">
                 <span class="contaianer">
 
-                <span class="lettering ">W</span>
-                <span class="lettering ">e</span>
-                <span class="lettering ">l</span>
-                <span class="lettering ">c</span>
-                <span class="lettering ">o</span>
-                <span class="lettering ">m</span>
-                <span class="lettering ">e</span>
-                <span class="lettering ">,</span>
-                <span class="lettering "> </span>
-                <span class="lettering ">S</span>
-                <span class="lettering ">t</span>
-                <span class="lettering ">r</span>
-                <span class="lettering ">a</span>
-                <span class="lettering ">n</span>
-                <span class="lettering ">g</span>
-                <span class="lettering ">e</span>
-                <span class="lettering ">r</span>
+                    <span class="lettering ">W</span>
+                    <span class="lettering ">e</span>
+                    <span class="lettering ">l</span>
+                    <span class="lettering ">c</span>
+                    <span class="lettering ">o</span>
+                    <span class="lettering ">m</span>
+                    <span class="lettering ">e</span>
+                    <span class="lettering ">,</span>
+                    <span class="lettering "> </span>
+                    <span class="lettering ">S</span>
+                    <span class="lettering ">t</span>
+                    <span class="lettering ">r</span>
+                    <span class="lettering ">a</span>
+                    <span class="lettering ">n</span>
+                    <span class="lettering ">g</span>
+                    <span class="lettering ">e</span>
+                    <span class="lettering ">r</span>
 
-                <br>
-                <span class="lettering">t</span>
-                <span class="lettering">o</span>
-                <span class="lettering"> </span>
-                <span class="lettering">m</span>
-                <span class="lettering">y</span>
-                <span class="lettering"> </span>
-                <span class="lettering">A</span>
-                <span class="lettering">R</span>
-                <span class="lettering">T</span>
-                <span class="lettering"> </span>
-                <span class="lettering">p</span>
-                <span class="lettering">a</span>
-                <span class="lettering">g</span>
-                <span class="lettering">e</span>
-                <span class="lettering"> </span>
-                <span class="lettering">:</span>
-                <span class="lettering">3</span>
+                    <br>
+                    <span class="lettering">t</span>
+                    <span class="lettering">o</span>
+                    <span class="lettering"> </span>
+                    <span class="lettering">m</span>
+                    <span class="lettering">y</span>
+                    <span class="lettering"> </span>
+                    <span class="lettering">A</span>
+                    <span class="lettering">R</span>
+                    <span class="lettering">T</span>
+                    <span class="lettering"> </span>
+                    <span class="lettering">p</span>
+                    <span class="lettering">a</span>
+                    <span class="lettering">g</span>
+                    <span class="lettering">e</span>
+                    <span class="lettering"> </span>
+                    <span class="lettering">:</span>
+                    <span class="lettering">3</span>
 
-            </span>
+                </span>
 
             </h1>
 
@@ -100,9 +203,9 @@
         </div>
     </section>
     <section class="personal-art">
-        <h2 class="title">
+        <div class=" layer-font">
             Most-popular <i class="fa-sharp fa-solid fa-palette"></i>
-        </h2>
+        </div>
     </section>
     <section class="container-huge">
         <div class="art-grid">
@@ -126,6 +229,96 @@
             </div>
         </div>
     </section>
+<!-- test poster -->
+<!-- 
+<div class="bottom-title layer-font">
+    Subscription Plans
+</div>
+
+    <div class="hero-container">
+      <div class="main-container">
+        <div class="poster-container">
+          <a href="#"><img src="./public/images/bronze.png" class="poster" /></a>
+        </div>
+        <div class="ticket-container">
+          <div class="ticket__content">
+            <h4 class="ticket__movie-title">One Month</h4>
+            <p class="ticket__movie-slogan">
+              Bronze
+            </p>
+            <p class="ticket__current-price">$16.00</p>
+            <p class="ticket__old-price">$20.00</p>
+            <button class="ticket__buy-btn bronze">Buy now</button>
+          </div>
+        </div>
+      </div>
+  
+      <div class="main-container">
+        <div class="poster-container">
+          <a href="#"><img src="./public/images/silver.png" class="poster" /></a>
+        </div>
+        <div class="ticket-container">
+          <div class="ticket__content">
+            <h4 class="ticket__movie-title">Half Year</h4>
+            <p class="ticket__movie-slogan">Silver</p>
+            <p class="ticket__current-price">$80.00</p>
+            <p class="ticket__old-price">$120.00</p>
+            <button class="ticket__buy-btn silver">Buy now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-container">
+        <div class="poster-container">
+          <a href="#"><img src="./public/images/gold.png" class="poster" /></a>
+        </div>
+        <div class="ticket-container">
+          <div class="ticket__content">
+            <h4 class="ticket__movie-title">Full Year</h4>
+            <p class="ticket__movie-slogan">Gold</p>
+            <p class="ticket__current-price">$140.00</p>
+            <p class="ticket__old-price">$240.00</p>
+            <button class="ticket__buy-btn gold">Buy now</button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- footer test -->
+    <footer class="footer">
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+        </div>
+        <ul class="social-icon">
+            <li class="social-icon__item"><a class="social-icon__link" href="#">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                </a></li>
+            <li class="social-icon__item"><a class="social-icon__link" href="#">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                </a></li>
+            <li class="social-icon__item"><a class="social-icon__link" href="#">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                </a></li>
+            <li class="social-icon__item"><a class="social-icon__link" href="#">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                </a></li>
+        </ul>
+        <ul class="menu">
+            <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+            <li class="menu__item"><a class="menu__link" href="#">About</a></li>
+            <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
+            <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
+            <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+
+        </ul>
+        <p>&copy;Softuni Exam 2022 | All Rights Reserved</p>
+    </footer>
+    <!-- Footer -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>
