@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,10 @@ import { Injectable } from '@angular/core';
 })
 export class UserService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  loadUser() {
+    console.log(this.http.get<any>('http://localhost:3031/nft/catalog/most-wanted/5'))
+    return this.http.get<any>('http://localhost:3031/nft/catalog/most-wanted/5')
+  }
 }
