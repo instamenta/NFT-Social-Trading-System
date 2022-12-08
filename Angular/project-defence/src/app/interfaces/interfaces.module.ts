@@ -1,17 +1,28 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { HomeViewComponent } from './home-view/home-view.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { CatalogComponent } from './catalog/catalog.component';
 
 
 
 @NgModule({
   declarations: [
     HomeViewComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent,
+    CatalogComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    BrowserModule,
+    HttpClientModule,
+    RouterModule
   ],
   exports: [
     HomeViewComponent,
