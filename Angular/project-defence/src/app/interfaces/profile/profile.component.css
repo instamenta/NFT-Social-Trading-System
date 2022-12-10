@@ -10,7 +10,10 @@ form.form-container {
     display: grid;
     grid-template-columns: 1fr 500px 1fr;
     width: 90vw;
-background-color: rgb(229, 229, 229);   
+    border-top: 10px  solid rgb(198, 198, 198);  
+    border-left: 10px solid rgb(198, 198, 198);  
+    
+background-color:  rgb(229, 229, 229);  
     border-radius: 3rem;
     box-shadow:
         5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF,
@@ -53,19 +56,50 @@ a.profile-socials i {
 }
 label.socials-label {
     font-size: 2.2rem;
-    -webkit-text-stroke: #ac008f 1px;
+    -webkit-text-stroke: #7c7c7c 1px;
 }
 a.profile-socials:hover {
-    color: #ac008f;
+    color:#289FED;
     text-decoration: underline;
 
 }
+.last{ 
+    padding-bottom: 20px;
+}
 
 h1.profile-info {
-    font-size: 2rem;
+    font-size: 2.3rem;
     font-weight: 700;
     font-family: 'Teko', sans-serif; 
+    -webkit-text-stroke: black 2px;
+    color: rgb(146, 146, 146);
+    letter-spacing: 2px;
 }
 h2.profile-info {
     font-style: italic;
+}
+h3.profile-info {
+    font-size: 1.8rem;
+}
+.hashtag {
+    font-size: 2rem;
+}
+
+.edit-options {
+    font-size: 1.5rem;
+    color:white;
+    border: none;
+    background-color: #7c7c7c;
+    border-radius: 24px;
+    margin: 16px 0;
+    padding: 4px 10px;
+}
+.edit-options:hover {
+    font-size: 1.5rem;
+    color: #7c7c7c;
+    border: none;
+    background-color :white;
+    border-radius: 24px;
+    margin: 16px 0;
+    padding: 4px 10px;
 }
