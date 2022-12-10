@@ -56,24 +56,10 @@
 <section class="container-huge">
     <div class="art-grid">
         
-        <div class="painting-container">
-            <img class="painting" src="./assets/public/images/greenish.jpg" />
+        <div *ngFor="let nftData of nftsData" class="painting-container">
+            <img routerLink="/catalog/details/{{nftData._id}}" class="painting" src="{{nftData.pic}}" />
         </div>
-        <div class="painting-container">
-            <img class="painting" src="./assets/public/images/minty-liquid-hd.jpg" />
-        </div>
-        <div class="painting-container">
-            <img class="painting" src="./assets/public/images/minty-liquid.jpg" />
-        </div>
-        <div class="painting-container">
-            <img class="painting" src="./assets/public/images/minty-liquid-hd.jpg" />
-        </div>
-        <div class="painting-container">
-            <img class="painting" src="./assets/public/images/minty-liquid.jpg" />
-        </div>
-        <div class="painting-container">
-            <img class="painting" src="./assets/public/images/greenish.jpg" />
-        </div>
+        
     </div>
 </section>
 

@@ -8,6 +8,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { CatalogComponent } from './catalog/catalog.component';
+import { DetailsComponent } from './details/details.component';
+import { PopularComponent } from './popular/popular.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -16,7 +19,10 @@ import { CatalogComponent } from './catalog/catalog.component';
     HomeViewComponent,
     LoginComponent,
     RegisterComponent,
-    CatalogComponent
+    CatalogComponent,
+    DetailsComponent,
+    PopularComponent,
+    ProfileComponent
   ],
   imports: [
     CommonModule,

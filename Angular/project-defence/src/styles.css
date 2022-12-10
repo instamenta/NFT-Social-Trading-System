@@ -592,7 +592,7 @@ div.hero-container {
 
 /* 404page */
 
-form.profile-container {
+/* form.profile-container {
     display: flex;
     margin: 30px auto;
     margin-bottom: 150px;
@@ -630,8 +630,8 @@ h2.profile-page {
 }
 #notOwner{
     /* background-color: white; */
-    background-position: center;
+    /* background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url('./assets/public/images/ultra-hd-greenjpg.jpg');
-}
+    background-image: url('./assets/public/images/ultra-hd-greenjpg.jpg'); */
+/* }  */

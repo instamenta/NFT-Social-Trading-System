@@ -1,0 +1,71 @@
+div.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 150px;
+    
+}
+form.form-container {
+    display: grid;
+    grid-template-columns: 1fr 500px 1fr;
+    width: 90vw;
+background-color: rgb(229, 229, 229);   
+    border-radius: 3rem;
+    box-shadow:
+        5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF,
+        15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF,
+        25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+        box-shadow:
+        5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF,
+        15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF,
+        25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+
+}
+div.grid-object {
+    /* background-color: rgb(208, 208, 208); */
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+img.profile-picture {
+    aspect-ratio: 1x1;
+    width: 100%;
+    border-radius: 3rem;
+}
+.grid-two {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+a.profile-socials {
+
+    font-size: 1.5rem;
+    text-align: start;
+}
+a.profile-socials i {
+    font-size: 2.2rem;
+    padding-right: 6px;
+}
+label.socials-label {
+    font-size: 2.2rem;
+    -webkit-text-stroke: #ac008f 1px;
+}
+a.profile-socials:hover {
+    color: #ac008f;
+    text-decoration: underline;
+
+}
+
+h1.profile-info {
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: 'Teko', sans-serif; 
+}
+h2.profile-info {
+    font-style: italic;
+}
