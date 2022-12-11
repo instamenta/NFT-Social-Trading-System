@@ -8,7 +8,19 @@
     min-height: 1000px;
     margin: -20px 0 50px;
 }
+label.auth-label {
+    font-size: 1.3rem;
+    text-align: left;
+    color: slategray;
 
+}
+div.label-container {
+    width: 80%;
+
+}
+.auth-error {
+    color: red;
+}
 h1.auth {
     font-weight: bold;
     margin: 0;
@@ -81,6 +93,10 @@ input.auth {
     padding: 12px 15px;
     margin: 8px 0;
     width: 80%;
+}
+input.auth.birthday {
+    padding: 4px 16px;
+    width: 50%;
 }
 
 

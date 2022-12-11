@@ -11,6 +11,7 @@ import { CatalogComponent } from './catalog/catalog.component';
 import { DetailsComponent } from './details/details.component';
 import { PopularComponent } from './popular/popular.component';
 import { ProfileComponent } from './profile/profile.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -28,12 +29,16 @@ import { ProfileComponent } from './profile/profile.component';
     CommonModule,
     BrowserModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports: [
     HomeViewComponent,
     LoginComponent,
-    
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class InterfacesModule { }

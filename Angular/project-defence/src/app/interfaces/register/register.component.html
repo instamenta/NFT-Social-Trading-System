@@ -1,7 +1,8 @@
 <div class="auth-form">
     <div class="container-auth" id="container">
         <div class="form-container sign-in-container">
-            <form class="auth-form" action="#">
+            <form class="auth-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+
                 <h1 class="auth">Create Account</h1>
                 <div class="social-container">
                     <a routerLink="/" class="social auth"><i class="fab fa-facebook-f"></i></a>
@@ -9,11 +10,34 @@
                     <a href="#" class="social auth"><i class="fab fa-linkedin-in"></i></a>
                 </div>
                 <span class="auth">or use your email for registration</span>
-                <input class="auth sign-in" type="text" placeholder="Name" />
-                <input class="auth sign-in " type="email" placeholder="Email" />
-                <input class="auth sign-in" type="password" placeholder="Password" />
-                <button class="auth default">REGISTER</button>
+                <input id="username" formControlName="username" name="username" class="auth sign-in" type="text" placeholder="Name" />
+                <label *ngIf="usernameError==true" class="auth-error">
+                    Username must be atleast 4 symbols long
+                </label>
+                <input id="email" formControlName="email" name="email" class="auth sign-in " type="email" placeholder="Email" />
+                <label *ngIf="emailError==true" class="auth-error">
+                    Email must be atleast 4 symbols long
+                </label>
+                <input id="password" formControlName="password" name="password" class="auth sign-in" type="password" placeholder="Password" />
+                <label *ngIf="passwordError==true" class="auth-error">
+                    Password must be atleast 4 symbols long
+                </label>
+                <div class="birthday-container">
+                    <label class="auth-label">Birthday:</label>
+                    <input id="birthday" formControlName="birthday" name="birthday" class="auth sign-in birthday" type="date" placeholder="Birthday" />
+                    <label *ngIf="birthdayError==true" class="auth-error">
+                        Birthday is required
+                    </label>
+                </div>
+                
+                
+                <button type="submit" class="auth default">REGISTER</button>
             </form>
+
+            <!-- <form [formGroup]="registerForm" (ngSubmit)="register()" class="auth-form">
+
+                
+            </form> -->
         </div>
         <div class="overlay-container">
             <div class="overlay">

@@ -239,3 +239,11 @@ a.auth.redirector:hover {
     background: radial-gradient(circle, rgba(255, 253, 119, 1) 0%, rgba(226, 132, 19, 1) 52%, rgba(222, 60, 75, 1) 71%, rgba(74, 49, 77, 1) 97%);
     color: #333;
 }
+.auth-error {
+    color: red;
+}
+.login-error {
+	color:red;
+	font-size: 1.5rem;
+	font-weight: 800;
+}
