@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { UserGuardService } from './auth/user-guard.service';
 import { CatalogComponent } from './interfaces/catalog/catalog.component';
 import { DetailsComponent } from './interfaces/details/details.component';
 import { HomeViewComponent } from './interfaces/home-view/home-view.component';
@@ -15,7 +16,7 @@ const routes: Routes = [
   {path: 'catalog', component: CatalogComponent},
   {path: 'catalog/details/:id', component: DetailsComponent},
   {path: 'catalog/popular', component: PopularComponent},
-  {path: 'profile/:id', component: ProfileComponent},
+  {path: 'profile/:id', component: ProfileComponent, canActivate:[UserGuardService]},
   
 ];
 
