@@ -11,25 +11,25 @@
                 <a routerLink="/catalog" class="navbar-item">
                     <i class="fa-sharp fa-solid fa-cart-shopping"></i>
                 </a>
-                <a routerLink="/profile/123123" class="navbar-item">
+                <a *ngIf="isUser==true" routerLink="/profile/{{userData._id}}" class="navbar-item">
                     <i class="fa-sharp fa-solid fa-user"></i>
                 </a>
-                <a routerLink="/liked" class="navbar-item">
+                <a *ngIf="isUser==true" routerLink="/liked" class="navbar-item">
                     <i class="fa-sharp fa-solid fa-heart"></i>
                 </a>
-                <a routerLink="/user-list" class="navbar-item">
+                <a routerLink="/profile-list" class="navbar-item">
                     <i class="fa-sharp fa-solid fa-user-plus"></i>
                 </a>
                 <a routerLink="/" class="navbar-item">
                     <i class="fa-sharp fa-solid fa-house-chimney"></i>
                 </a>
-                <a routerLink="/login" class="navbar-item">
+                <a *ngIf="isUser==false" routerLink="/login" class="navbar-item">
                     LOGIN
                 </a>
-                <a routerLink="/register" class="navbar-item">
+                <a *ngIf="isUser==false" routerLink="/register" class="navbar-item">
                     REGISTER
                 </a>
-                <a routerLink="/logout" class="navbar-item">
+                <a *ngIf="isUser" routerLink="/logout" class="navbar-item">
                     <i class="fa-sharp fa-solid fa-right-to-bracket"></i>
                 </a>
             </div>

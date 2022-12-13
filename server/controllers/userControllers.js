@@ -1,6 +1,36 @@
 const User = require('../models/UserModel')
 const bcrypt = require('bcrypt');
 const generateToken = require('../utils/generateToken');
+const decodeToken = require('../utils/decodeToken');
+
+const getAllUsers = async (req,res) => {
+    const allUsersData = await User.find()
+    res.json(allUsersData)
+}
+const getUserData = async(req, res) => {
+
+    let {token} = req.body;
+    
+
+    if(token) {
+        const tokenData = await decodeToken(token)
+        console.log('==========================')
+        console.log(tokenData)
+        console.log('==========================')
+
+        if (token=="NOTOKEN") {
+        console.log('notoken2')
+
+            res.json({message: 'NOTOKEN'})
+        } else {
+            const userData = await User.findOne({_id: tokenData._id})
+
+            res.json(userData) 
+        }
+    }
+
+    
+}
 const registerUser = async (req, res) => {
     let { username, email, birthday, password } = req.body;
     const salt = await bcrypt.genSalt(10);
@@ -80,4 +110,4 @@ const authUser = async (req, res) => {
 
 }
 
-module.exports = { registerUser, authUser }
+module.exports = { registerUser, authUser , getUserData, getAllUsers}

@@ -12,6 +12,9 @@ import { DetailsComponent } from './details/details.component';
 import { PopularComponent } from './popular/popular.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ErrorComponent } from './error/error.component';
+import { LogoutComponent } from './logout/logout.component';
+import { ProfileLitComponent } from './profile-lit/profile-lit.component';
 
 
 
@@ -23,7 +26,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CatalogComponent,
     DetailsComponent,
     PopularComponent,
-    ProfileComponent
+    ProfileComponent,
+    ErrorComponent,
+    LogoutComponent,
+    ProfileLitComponent
   ],
   imports: [
     CommonModule,

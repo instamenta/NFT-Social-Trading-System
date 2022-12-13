@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-register',
@@ -15,8 +16,9 @@ export class RegisterComponent{
     emailError: any;
     passwordError: any;
     birthdayError: any;
+responseMessage: any;
 
-    constructor(private formBuilder: FormBuilder, private http: HttpClient) {
+    constructor(private formBuilder: FormBuilder, private http: HttpClient, private cookieService: CookieService) {
       this.form = this.formBuilder.group({
         username: ['', [Validators.required, Validators.minLength(4)]],
         email: ['', [Validators.required, Validators.minLength(4)]],
@@ -48,6 +50,10 @@ export class RegisterComponent{
     .subscribe((response) => {
       console.log(response)
       console.log("nice")
+      this.responseMessage = response
+      this.cookieService.set('userData', this.responseMessage?.token)
+    location.reload()
+
     })
     
       } else {

@@ -1,6 +1,7 @@
 import { Component , OnInit} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NftService } from 'src/app/auth/nft.service';
+import { UserService } from 'src/app/auth/user.service';
 
 @Component({
   selector: 'app-details',
@@ -12,7 +13,8 @@ export class DetailsComponent implements OnInit {
   nftData: any | null = null
   nftId: any;
   params$: any;
-  constructor( private route: ActivatedRoute, private nftService: NftService) {}
+  creatorData: any;
+  constructor( private route: ActivatedRoute, private nftService: NftService, private userService: UserService) {}
   
   ngOnInit() {  
 
@@ -25,7 +27,13 @@ export class DetailsComponent implements OnInit {
       next: (nftData) => {
         this.nftData = nftData
         console.log(nftData)
+        this.userService.getUser(nftData.creator).subscribe(result => {
+          this.creatorData = result
+          console.log(this.creatorData)
+        })
+
       }
     })
+
   }
 }

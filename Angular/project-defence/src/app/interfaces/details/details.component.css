@@ -171,3 +171,10 @@
     align-items: center;
     justify-content: center;
 }
+.profile-link {
+    color: rgb(0, 146, 146);
+
+}
+.profile-link:hover {
+    text-decoration: underline;
+}

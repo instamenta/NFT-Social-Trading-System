@@ -17,7 +17,7 @@
                             <h1 class="details-description">"{{nftData.description}}"</h1>
                             <!--: <></>
                         } -->
-                    <h1 class="details-creator">Made By: {{nftData.creator}}</h1>
+                    <h1 class="details-creator">Made By: <a class="profile-link" routerLink="/profile/{{creatorData._id}}">{{creatorData.username}}</a></h1>
                     <h1 class="details-creator">Likes:{{nftData.likes.length}} ♥</h1>
                     <h1 class="details-creator">Owners:{{nftData.owners.length}} #</h1>
                 </div>

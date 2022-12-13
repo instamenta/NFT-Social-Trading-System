@@ -54,7 +54,8 @@ export class LoginComponent {
           } else {
             this.cookieService.set('userData',this.responseMessage?.token)
             localStorage.setItem('userData', this.responseMessage?.token)
-            this.router.navigateByUrl('/');
+    location.reload()
+
           }
         })
 

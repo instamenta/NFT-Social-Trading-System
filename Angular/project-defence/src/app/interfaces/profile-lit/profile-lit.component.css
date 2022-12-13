@@ -3,7 +3,7 @@ div.container{
     justify-content: center;
     align-items: center;
     padding-top: 50px;
-    padding-bottom: 150px;
+    padding-bottom: 16px;
     
 }
 form.form-container {
@@ -75,9 +75,12 @@ h1.profile-info {
     -webkit-text-stroke: black 2px;
     color: rgb(146, 146, 146);
     letter-spacing: 2px;
+
 }
 h2.profile-info {
     font-style: italic;
+    overflow-wrap: break-word;
+    width: 40%;
 }
 h3.profile-info {
     font-size: 1.8rem;
@@ -103,4 +106,13 @@ h3.profile-info {
     border-radius: 24px;
     margin: 16px 0;
     padding: 4px 10px;
+}
+.see-list {
+    color:rgb(146, 146, 146);
+    padding-left: 4px;
+    text-decoration:underline;
+
+}
+.see-list:hover {
+    color:#289FED;
 }
