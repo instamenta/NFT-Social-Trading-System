@@ -78,6 +78,8 @@ h1.profile-info {
 }
 h2.profile-info {
     font-style: italic;
+    overflow-wrap: break-word;
+max-width: 200px;
 }
 h3.profile-info {
     font-size: 1.8rem;
@@ -103,4 +105,28 @@ h3.profile-info {
     border-radius: 24px;
     margin: 16px 0;
     padding: 4px 10px;
+}
+
+.see-list {
+    color:rgb(146, 146, 146);
+    padding-left: 4px;
+    text-decoration:underline;
+
+}
+.see-list:hover {
+    color:#289FED;
+}
+
+.change-name {
+    min-width: 250px;
+    min-height: 32px;
+    font-size: 1.5rem;
+    text-align: center; 
+}
+.change-description {
+    min-width: 250px;
+text-align: center;
+    min-height: 250px;
+    font-size: 1.5rem;
+    word-wrap: break-word;
 }

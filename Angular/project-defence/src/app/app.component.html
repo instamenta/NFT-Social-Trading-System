@@ -14,7 +14,7 @@
                 <a *ngIf="isUser==true" routerLink="/profile/{{userData._id}}" class="navbar-item">
                     <i class="fa-sharp fa-solid fa-user"></i>
                 </a>
-                <a *ngIf="isUser==true" routerLink="/liked" class="navbar-item">
+                <a *ngIf="isUser==true" routerLink="/profile/{{userData._id}}/liked" class="navbar-item">
                     <i class="fa-sharp fa-solid fa-heart"></i>
                 </a>
                 <a routerLink="/profile-list" class="navbar-item">

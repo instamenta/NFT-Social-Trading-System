@@ -20,7 +20,7 @@ responseMessage: any;
 
     constructor(private formBuilder: FormBuilder, private http: HttpClient, private cookieService: CookieService) {
       this.form = this.formBuilder.group({
-        username: ['', [Validators.required, Validators.minLength(4)]],
+        username: ['', [Validators.required, Validators.minLength(3)]],
         email: ['', [Validators.required, Validators.minLength(4)]],
         password: ['', [Validators.required, Validators.minLength(4)]],
         birthday: ['', Validators.required],

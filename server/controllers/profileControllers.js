@@ -72,7 +72,11 @@ const editUser = async (req, res) => {
     }
 }
 const editBioUser = async (req, res) => {
+    console.log("enters1")
+    
     try {
+        console.log("enters2")
+
         const userId = req.params.id
         const newBio = req.body.editArea
         let changeState = false
@@ -80,11 +84,18 @@ const editBioUser = async (req, res) => {
         const userData = await User.findById(userId)
 
         if (newBio !== userData.bio) {
+    console.log("enters3")
+
             await User.findByIdAndUpdate(userId, { bio: newBio }).lean();
             changeState = true
             if (changeState === false) {
+    console.log("fail")
+
                 res.json()
+
             } else {
+    console.log("wtf")
+
                 const newUser = await User.findById(userId)
                 res.json(newUser)
             }

@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ErrorComponent } from './error/error.component';
 import { LogoutComponent } from './logout/logout.component';
 import { ProfileLitComponent } from './profile-lit/profile-lit.component';
+import { LikedComponent } from './liked/liked.component';
 
 
 
@@ -29,7 +30,8 @@ import { ProfileLitComponent } from './profile-lit/profile-lit.component';
     ProfileComponent,
     ErrorComponent,
     LogoutComponent,
-    ProfileLitComponent
+    ProfileLitComponent,
+    LikedComponent
   ],
   imports: [
     CommonModule,

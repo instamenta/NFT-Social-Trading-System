@@ -19,9 +19,11 @@ export class UserService {
     return this.http.get('http://localhost:3031/profile/' + id)
   }
   editUser(id: any ,username:any, email: any) {
+    console.log("enters2")
     return this.http.post(`http://localhost:3031/profile/${id}/edit`, { username, email })
   }
   editUserDescription(id: any, description: any) {
+    console.log("enters1")
     return this.http.post(`http://localhost:3031/profile/${id}/edit-bio`, { description })
   }
   // editUserProfilePicture()

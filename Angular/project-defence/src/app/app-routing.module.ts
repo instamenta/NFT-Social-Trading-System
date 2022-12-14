@@ -6,6 +6,7 @@ import { CatalogComponent } from './interfaces/catalog/catalog.component';
 import { DetailsComponent } from './interfaces/details/details.component';
 import { ErrorComponent } from './interfaces/error/error.component';
 import { HomeViewComponent } from './interfaces/home-view/home-view.component';
+import { LikedComponent } from './interfaces/liked/liked.component';
 import { LoginComponent } from './interfaces/login/login.component';
 import { LogoutComponent } from './interfaces/logout/logout.component';
 import { PopularComponent } from './interfaces/popular/popular.component';
@@ -23,7 +24,8 @@ const routes: Routes = [
   {path: 'profile/:id', component: ProfileComponent,},
   {path: '404', component: ErrorComponent},
   {path: 'logout', component: LogoutComponent, canActivate:[UserGuardService]},
-  {path: 'profile-list', component: ProfileLitComponent}
+  {path: 'profile-list', component: ProfileLitComponent},
+  {path: 'profile/:id/liked', component: LikedComponent}
 ];
 
 @NgModule({

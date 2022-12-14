@@ -13,7 +13,7 @@ export class AppComponent  {
   isUser: any = false;
 
   constructor(private userService: UserService) {
-    this.userData = this.userService.getUserData().subscribe((result) => {
+    this.userService.getUserData().subscribe((result) => {
 
         this.userData = result
         if(this.userData.message) {
