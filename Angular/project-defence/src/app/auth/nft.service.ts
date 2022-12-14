@@ -20,4 +20,7 @@ export class NftService {
   loadMostWantedAll() {
     return this.http.get<any>('http://localhost:3031/nft/catalog/most-wanted');
   }
+  loadNftByLink(url: any) {
+    return this.http.post<any>('http://localhost:3031/nft/url', {url})
+  }
 }

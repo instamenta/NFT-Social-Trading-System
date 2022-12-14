@@ -135,4 +135,9 @@ const mostWantedNft = async (req,res) => {
     res.json(nftList)
 }
 
-module.exports = { uploadNft, catalogNft, detailsNft, editNft, deleteNft, likeNft, ownNft, latestNft, mostWantedNft}
+const getNftUrl = async (req, res) => {
+    const url = req.body.url
+    const data = await Nft.findOne({pic: url}).lean()
+    if(data) { res.json(data) }
+}
+module.exports = {getNftUrl, uploadNft, catalogNft, detailsNft, editNft, deleteNft, likeNft, ownNft, latestNft, mostWantedNft}

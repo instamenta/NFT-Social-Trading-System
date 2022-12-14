@@ -8,7 +8,8 @@ const {
     likeNft, 
     ownNft, 
     latestNft, 
-    mostWantedNft 
+    mostWantedNft, 
+    getNftUrl
 } = require('../controllers/nftControllers');
 
 const router = express.Router()
@@ -25,5 +26,7 @@ router.route('/catalog/:id/delete').get(deleteNft)
 
 router.route('/like/:id/:usernames').post(likeNft)
 router.route('/own/:id/:usernames').post(ownNft)
+
+router.route('/url').post(getNftUrl)
 
 module.exports = router

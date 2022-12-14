@@ -16,6 +16,8 @@ import { ErrorComponent } from './error/error.component';
 import { LogoutComponent } from './logout/logout.component';
 import { ProfileLitComponent } from './profile-lit/profile-lit.component';
 import { LikedComponent } from './liked/liked.component';
+import { OwnedComponent } from './owned/owned.component';
+import { ChoosePicComponent } from './choose-pic/choose-pic.component';
 
 
 
@@ -31,7 +33,9 @@ import { LikedComponent } from './liked/liked.component';
     ErrorComponent,
     LogoutComponent,
     ProfileLitComponent,
-    LikedComponent
+    LikedComponent,
+    OwnedComponent,
+    ChoosePicComponent
   ],
   imports: [
     CommonModule,
@@ -39,7 +43,7 @@ import { LikedComponent } from './liked/liked.component';
     HttpClientModule,
     RouterModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
   ],
   exports: [
     HomeViewComponent,
