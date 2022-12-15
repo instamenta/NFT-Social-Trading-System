@@ -13,11 +13,16 @@ import { UserService } from 'src/app/auth/user.service';
 export class ChoosePicComponent {
   userData: any;
   nftArray: any = [];
-  constructor(private userService: UserService, public nftService: NftService, private router: Router) { }
+  params$:any;
+  userId:any;
+  constructor(private userService: UserService, public nftService: NftService, private router: Router, private route: ActivatedRoute) { }
 
 
   ngOnInit(): void {
-    this.userService.getUserData().subscribe((result) => {
+    this.params$ = this.route.params.subscribe(params => {
+      this.userId = params["id"]
+    })
+    this.userService.getUser(this.userId).subscribe((result) => {
 
 
       this.userData = result

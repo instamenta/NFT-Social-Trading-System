@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { NftService } from 'src/app/auth/nft.service';
 import { UserService } from 'src/app/auth/user.service';
 
@@ -11,11 +12,16 @@ export class OwnedComponent implements OnInit {
 
   userData: any;
   nftArray: any = [];
-  constructor(private userService: UserService, public nftService: NftService) { }
+  params$: any;
+  userId: any;
+  constructor(private userService: UserService, public nftService: NftService, private route: ActivatedRoute) { }
 
 
   ngOnInit(): void {
-    this.userService.getUserData().subscribe((result) => {
+    this.params$ = this.route.params.subscribe(params => {
+      this.userId = params["id"]
+    })
+    this.userService.getUser(this.userId).subscribe((result) => {
 
 
       this.userData = result
