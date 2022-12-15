@@ -15,29 +15,27 @@ const getUser = async (req, res) => {
 }
 const setPictureUser = async (req, res) => {
 
+    console.log('in')
     if (req.params && req.body) {
-        if (req.params.id && req.body.currentUser && req.body.nftUrl) {
 
-            const nftUrl = req.body.nftUrl
-            const ownerId = req.params.id
-            const currentUser = JSON.parse(req.body.currentUser)
 
-            if (ownerId === currentUser._id) {
-                User.findByIdAndUpdate(ownerId, {
-                    pic: nftUrl
-                }, function (err, docs) {
-                    if (err) {
-                        console.log(err)
-                        res.status = 203
-                        res.json()
-                    } else {
-                        console.log("Updated userData: " + docs);
-                        res.status = 200
-                        res.json()
-                    }
-                })
+        const nftUrl = req.body.url
+        const ownerId = req.params.id
+
+
+        User.findByIdAndUpdate(ownerId, {
+            pic: nftUrl
+        }, function (err, docs) {
+            if (err) {
+                console.log(err)
+                res.status = 203
+                res.json()
+            } else {
+                console.log("Updated userData: " + docs);
+                res.status = 200
+                res.json()
             }
-        }
+        })
     }
 }
 
@@ -73,7 +71,7 @@ const editUser = async (req, res) => {
 }
 const editBioUser = async (req, res) => {
     console.log("enters1")
-    
+
     try {
         console.log("enters2")
 
@@ -84,17 +82,17 @@ const editBioUser = async (req, res) => {
         const userData = await User.findById(userId)
 
         if (newBio !== userData.bio) {
-    console.log("enters3")
+            console.log("enters3")
 
             await User.findByIdAndUpdate(userId, { bio: newBio }).lean();
             changeState = true
             if (changeState === false) {
-    console.log("fail")
+                console.log("fail")
 
                 res.json()
 
             } else {
-    console.log("wtf")
+                console.log("wtf")
 
                 const newUser = await User.findById(userId)
                 res.json(newUser)

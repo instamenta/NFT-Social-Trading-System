@@ -9,16 +9,16 @@ export class UserService {
 
   constructor(private http: HttpClient, private cookieService: CookieService) { }
 
-  registerUser(username: any, email: any ,birthday: any, password: any) {
-    return this.http.post('http://localhost:3031/users/register', { username,email,birthday,password })
-  } 
+  registerUser(username: any, email: any, birthday: any, password: any) {
+    return this.http.post('http://localhost:3031/users/register', { username, email, birthday, password })
+  }
   loginUser(username: any, password: any) {
-    return this.http.post('http://localhost:3031/users/login', {username, password})
+    return this.http.post('http://localhost:3031/users/login', { username, password })
   }
   getUser(id: any) {
     return this.http.get('http://localhost:3031/profile/' + id)
   }
-  editUser(id: any ,username:any, email: any) {
+  editUser(id: any, username: any, email: any) {
     console.log("enters2")
     return this.http.post(`http://localhost:3031/profile/${id}/edit`, { username, email })
   }
@@ -26,19 +26,24 @@ export class UserService {
     console.log("enters1")
     return this.http.post(`http://localhost:3031/profile/${id}/edit-bio`, { description })
   }
-  // editUserProfilePicture()
+
   getUserData() {
 
 
     let token: any = this.cookieService.get('userData')
-    if(!token) {
-      token="NOTOKEN"
+    if (!token) {
+      token = "NOTOKEN"
     }
-      return this.http.post('http://localhost:3031/users/decodeToken', {token})
-    
+    return this.http.post('http://localhost:3031/users/decodeToken', { token })
+
   }
   getAllUsers() {
     return this.http.get('http://localhost:3031/users/get-all-users')
   }
-  
+  changeProfilePicture(id: any, url: any) {
+    console.log(url)
+    console.log(id)
+    return this.http.post(`http://localhost:3031/profile/${id}/select-profile-picture`, { url })
+  }
+
 }

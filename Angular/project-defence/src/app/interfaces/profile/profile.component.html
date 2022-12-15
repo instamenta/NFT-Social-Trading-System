@@ -2,12 +2,18 @@
 
     <form *ngIf="userData" class="form-container">
         <div class="grid-object">
-            <h1  class="profile-info">{{userData.username}}</h1>
+            
+            <!-- <h1  class="profile-info">{{userData.username}}</h1> -->
+            <button>Edit Name</button>
+            <input class="edit-name"  type="text">
 
-            <h2  class="profile-info">"{{userData.bio.slice(0, 100)}}"</h2>
+            <input class="edit-bio" type="text">
+            <button>Edit Bio</button>
+            <!-- <h2  class="profile-info">"{{userData.bio.slice(0, 100)}}"</h2> -->
 
 
 
+            <button routerLink="/profile/{{userData._id}}/choose-pic" class="choose-pic">Choose Profile-Art</button>
 
         </div>
         <div class="grid-object">

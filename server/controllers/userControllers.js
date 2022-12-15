@@ -14,9 +14,7 @@ const getUserData = async(req, res) => {
 
     if(token) {
         const tokenData = await decodeToken(token)
-        console.log('==========================')
-        console.log(tokenData)
-        console.log('==========================')
+
 
         if (token=="NOTOKEN") {
         console.log('notoken2')
