@@ -4,6 +4,7 @@ import { GuestGuardService } from './auth/guest-guard.service';
 import { UserGuardService } from './auth/user-guard.service';
 import { CatalogComponent } from './interfaces/catalog/catalog.component';
 import { ChoosePicComponent } from './interfaces/choose-pic/choose-pic.component';
+import { CreateComponent } from './interfaces/create/create.component';
 import { DetailsComponent } from './interfaces/details/details.component';
 import { ErrorComponent } from './interfaces/error/error.component';
 import { HomeViewComponent } from './interfaces/home-view/home-view.component';
@@ -30,6 +31,7 @@ const routes: Routes = [
   {path: 'profile/:id/liked', component: LikedComponent},
   {path: 'profile/:id/owned', component: OwnedComponent},
   {path: 'profile/:id/choose-pic', component:ChoosePicComponent},
+  {path: 'create', component: CreateComponent},
 
 ];
 

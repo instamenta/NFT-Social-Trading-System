@@ -18,6 +18,7 @@ import { ProfileLitComponent } from './profile-lit/profile-lit.component';
 import { LikedComponent } from './liked/liked.component';
 import { OwnedComponent } from './owned/owned.component';
 import { ChoosePicComponent } from './choose-pic/choose-pic.component';
+import { CreateComponent } from './create/create.component';
 
 
 
@@ -35,7 +36,8 @@ import { ChoosePicComponent } from './choose-pic/choose-pic.component';
     ProfileLitComponent,
     LikedComponent,
     OwnedComponent,
-    ChoosePicComponent
+    ChoosePicComponent,
+    CreateComponent
   ],
   imports: [
     CommonModule,

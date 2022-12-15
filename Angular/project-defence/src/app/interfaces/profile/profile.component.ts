@@ -11,19 +11,23 @@ export class ProfileComponent implements OnInit {
   userData: any;
   currentUserData: any;
   isOwner: any = false;
-  nftId: any;
+  userId: any;
   params$: any;
+
+  usernameValue: any;
+  descriptionValue: any;
 
   constructor(private userService: UserService, private route: ActivatedRoute,) { }
 
   ngOnInit(): void {
     this.params$ = this.route.params.subscribe(params => {
-      this.nftId = params["id"]
+      this.userId = params["id"]
     })
-    this.userService.getUser(this.nftId).subscribe((result) => {
+    
+    this.userService.getUser(this.userId).subscribe((result) => {
       this.userData = result
-      console.log(this.userData)
-
+      this.usernameValue = this.userData.username;
+      this.descriptionValue = this.userData.bio;
       this.userService.getUserData().subscribe((result) => {
         this.currentUserData = result
         if (this.currentUserData.message) {
@@ -36,5 +40,15 @@ export class ProfileComponent implements OnInit {
         }
       })
     })
+  }
+  
+  editNameHandler() {
+    this.userService.editUser(this.userId, this.usernameValue, this.userData.email)
+    console.log(this.usernameValue)
+
+  }
+  editBioHandler() {
+    this.userService.editUserDescription(this.userId,this.descriptionValue)
+    console.log(this.descriptionValue)
   }
 }

@@ -11,18 +11,24 @@
                 <a routerLink="/catalog" class="navbar-item">
                     <i class="fa-sharp fa-solid fa-cart-shopping"></i>
                 </a>
+                <a *ngIf="isUser==true" routerLink="/create" class="navbar-item">
+
+                    <i class="fa-solid fa-circle-plus"></i>
+                </a>
                 <a *ngIf="isUser==true" routerLink="/profile/{{userData._id}}" class="navbar-item">
                     <i class="fa-sharp fa-solid fa-user"></i>
                 </a>
-                <a *ngIf="isUser==true" routerLink="/profile/{{userData._id}}/liked" class="navbar-item">
-                    <i class="fa-sharp fa-solid fa-heart"></i>
-                </a>
+                
                 <a routerLink="/profile-list" class="navbar-item">
                     <i class="fa-sharp fa-solid fa-user-plus"></i>
+                </a>
+                <a *ngIf="isUser==true" routerLink="/profile/{{userData._id}}" class="navbar-item">
+                    <i class="fa-sharp fa-solid fa-user"></i>
                 </a>
                 <a routerLink="/" class="navbar-item">
                     <i class="fa-sharp fa-solid fa-house-chimney"></i>
                 </a>
+
                 <a *ngIf="isUser==false" routerLink="/login" class="navbar-item">
                     LOGIN
                 </a>
@@ -63,6 +69,7 @@
         <li class="social-icon__item"><a class="social-icon__link" href="#">
                 <i class="fa-brands fa-instagram"></i>
             </a></li>
+
     </ul>
     <ul class="menu">
         <li class="menu__item"><a class="menu__link" href="#">Home</a></li>

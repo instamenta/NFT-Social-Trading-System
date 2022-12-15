@@ -10,7 +10,7 @@ const nftSchema = mongoose.Schema({
     },
     info: {
         type: String,
-        required: true,
+
         minlength: 3,
     },
     description: {

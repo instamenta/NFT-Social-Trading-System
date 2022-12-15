@@ -46,25 +46,35 @@ const editUser = async (req, res) => {
         let newUsername = req.body.username
         let newEmail = req.body.email
         let changeState = false
-
+        console.log('in1')
         const userData = await User.findById(userId)
 
         if (newUsername !== userData.username) {
+        console.log('in2')
+
             await User.findByIdAndUpdate(userId, { username: newUsername }).lean();
             changeState = true
         }
 
         if (newEmail !== userData.email) {
+        console.log('in3')
+
             await User.findByIdAndUpdate(userId, { email: newEmail }).lean();
             changeState = true
         }
         if (changeState === false) {
+        console.log('in3')
+
             res.json({ message: 'Nothing to update' })
         } else {
+        console.log('in4')
+
             const newUser = await User.findById(userId)
             res.json(newUser)
         }
     } catch (err) {
+        console.log('in5')
+
         res.json({ message: 'Updating error' })
         res.end()
     }
@@ -76,15 +86,17 @@ const editBioUser = async (req, res) => {
         console.log("enters2")
 
         const userId = req.params.id
-        const newBio = req.body.editArea
+        const newBio = req.body.description
+        console.log(req.body)
         let changeState = false
 
         const userData = await User.findById(userId)
-
+        console.log(userId)
         if (newBio !== userData.bio) {
             console.log("enters3")
 
-            await User.findByIdAndUpdate(userId, { bio: newBio }).lean();
+            const updated = await User.findByIdAndUpdate(userId, { bio: newBio }).lean();
+            console.log(updated)
             changeState = true
             if (changeState === false) {
                 console.log("fail")
@@ -94,7 +106,7 @@ const editBioUser = async (req, res) => {
             } else {
                 console.log("wtf")
 
-                const newUser = await User.findById(userId)
+                const newUser = await User.findById(userId).lean()
                 res.json(newUser)
             }
         }
