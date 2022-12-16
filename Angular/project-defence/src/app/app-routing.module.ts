@@ -6,6 +6,7 @@ import { CatalogComponent } from './interfaces/catalog/catalog.component';
 import { ChoosePicComponent } from './interfaces/choose-pic/choose-pic.component';
 import { CreateComponent } from './interfaces/create/create.component';
 import { DetailsComponent } from './interfaces/details/details.component';
+import { EditComponent } from './interfaces/edit/edit.component';
 import { ErrorComponent } from './interfaces/error/error.component';
 import { HomeViewComponent } from './interfaces/home-view/home-view.component';
 import { LikedComponent } from './interfaces/liked/liked.component';
@@ -21,17 +22,18 @@ const routes: Routes = [
   {path:'', component: HomeViewComponent},
   {path: 'login', component: LoginComponent, canActivate:[GuestGuardService]},
   {path: 'register', component: RegisterComponent, canActivate:[GuestGuardService]},
-  {path: 'catalog', component: CatalogComponent},
-  {path: 'catalog/details/:id', component: DetailsComponent},
-  {path: 'catalog/popular', component: PopularComponent},
-  {path: 'profile/:id', component: ProfileComponent,},
-  {path: '404', component: ErrorComponent},
   {path: 'logout', component: LogoutComponent, canActivate:[UserGuardService]},
   {path: 'profile-list', component: ProfileLitComponent},
   {path: 'profile/:id/liked', component: LikedComponent},
   {path: 'profile/:id/owned', component: OwnedComponent},
   {path: 'profile/:id/choose-pic', component:ChoosePicComponent},
+  {path: 'profile/:id', component: ProfileComponent,},
   {path: 'create', component: CreateComponent},
+  {path: 'catalog', component: CatalogComponent},
+  {path: 'catalog/popular', component: PopularComponent},
+  {path: 'catalog/details/:id', component: DetailsComponent},
+  {path: 'catalog/details/:id/edit', component: EditComponent},
+  {path: '404', component: ErrorComponent},
 
 ];
 

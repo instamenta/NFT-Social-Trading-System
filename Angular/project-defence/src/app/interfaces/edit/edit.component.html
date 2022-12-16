@@ -1,38 +1,38 @@
 <div class="page-container">
     <form  [formGroup]="form" (ngSubmit)="onSubmit()" class="create-form">
-        <h1 class="art">Art Creator</h1>
+        <h1 class="art">Art Editor</h1>
         <div class="grid-container">
             <div class="grid-object">
                 <label for="" class="input-label">
                   Art's Name:  
                 </label>
 
-                <input id="name" formControlName="name" name="name" type="text" class="create-input">
-                <label *ngIf="nameError==true" class="auth-error">
+                <input id="name" formControlName="name" name="name" type="text" class="create-input" [ngModel]="nameValue" >
+                <label *ngIf="nameError == true" class="auth-error">
                   name must be atleast 4 symbols long
                 </label>
                 <label for="" class="input-label">
                     Art's  Description:  
                   </label>
        
-                  <input id="description" formControlName="description" name="description" type="text" class="create-input">
-                  <label *ngIf="descriptionError==true" class="auth-error">
+                  <input id="description" formControlName="description" name="description" type="text" class="create-input" [ngModel]="descriptionValue">
+                  <label *ngIf="descriptionError == true" class="auth-error">
                     description must be atleast 4 symbols long
                   </label>
                   <label for="" class="input-label">
                     Art's  Url:
                   </label>
                   
-                  <input (change)="urlHandler()" id="url" formControlName="url" name="url"  type="url" class="create-input">
-                  <label *ngIf="urlError==true" class="auth-error">
+                  <input (change)="urlHandler()" id="url" formControlName="url" name="url"  type="url" class="create-input" [ngModel]="urlValue">
+                  <label *ngIf="urlError == true" class="auth-error">
                     url must be atleast 4 symbols long
                   </label>
                   <label for="" class="input-label">
                     Art's Price:  
                   </label>
                   
-                  <input id="price" formControlName="price" name="price"  type="number" class="create-input">
-                  <label *ngIf="priceError==true" class="auth-error">
+                  <input  id="price" formControlName="price" name="price"  type="number" class="create-input" [ngModel]="priceValue">
+                  <label *ngIf="priceError == true" class="auth-error">
                     price must be atleast 4 symbols long
                   </label>
                   <button class="submit">Create Art</button>

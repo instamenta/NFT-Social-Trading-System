@@ -6,7 +6,7 @@ const nftSchema = mongoose.Schema({
         required: true,
         unique: true,
         minlength: 3,
-        maxlength: 16,
+        maxlength: 14,
     },
     info: {
         type: String,

@@ -22,22 +22,20 @@
                     <h1 class="details-creator">Owners:{{nftData.owners.length}} #</h1>
                 </div>
                 <div class="details-action-btn">
-                    <!-- {isGuest 
-                        ?   <>
-                        </>
-                        :   <>  
-                        <button onClick={likeHandler} class="like-btn">
-                            {liked
-                                ? 'liked'
-                                : 'like'}
+        
+                        <button *ngIf="isCreator == false" onClick={likeHandler} class="action-button">
+                            {{ownedText}}
                         </button>
-                        <button onClick={ownHandler} class="own-btn">
-                            {owned
-                                ? 'owned'
-                                : 'own'}
+                        <button *ngIf="isCreator == false" onClick={ownHandler} class="action-button">
+                            {{likedText}}
                         </button>
-                        </>
-                        } -->
+
+                        <button  *ngIf="isCreator == true"  class="action-button" routerLink="/catalog/details/{{nftData._id}}/edit">
+                            Edit
+                        </button>
+                        <button  *ngIf="isCreator == true"  class="action-button" (click)="deleteHandler()">
+                            Delete  
+                        </button>
 
                 </div>
                 <div>

@@ -1,47 +1,66 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { CookieService } from 'ngx-cookie-service';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NftService } from 'src/app/auth/nft.service';
 import { UserService } from 'src/app/auth/user.service';
 
 @Component({
-  selector: 'app-create',
-  templateUrl: './create.component.html',
-  styleUrls: ['./create.component.css']
+  selector: 'app-edit',
+  templateUrl: './edit.component.html',
+  styleUrls: ['./edit.component.css']
 })
-export class CreateComponent implements OnInit {
+export class EditComponent implements OnInit {
   form: FormGroup;
-  nameError: any;
-  descriptionError: any;
-  imgSrc: any = 'https://rlv.zcache.com.au/create_your_own_photo_print-r7881a010b313447b82044d4b2d1875bc_ncud_8byvr_324.jpg?square_it=true';
-  urlError: any;
-  priceError: any;
+
   userData: any;
+  userId: any;
   responseMessage: any;
   tokenValue: any;
+  params$ :any;
+  postData: any;
+  imgSrc:  any;
+  nameError: any;
+  descriptionError: any;
+  urlError: any;
+  priceError: any;
+  
+  nameValue: any;
+  descriptionValue: any;
+  urlValue: any;
+  priceValue: any;
 
   constructor(
     private formBuilder: FormBuilder,
+    private http: HttpClient,
     private nftService: NftService,
     private userService: UserService,
-    private router: Router,
-   ) {
-    this.form = this.formBuilder.group({
-      name: ['', [Validators.required, Validators.minLength(3)],],
-      description: ['', [Validators.required, Validators.minLength(4)]],
-      url: ['', [Validators.required, Validators.minLength(4)]],
-      price: ['', [Validators.required, Validators.minLength(4)]],
-    });
+    private route: ActivatedRoute,
+    private router: Router) {
+      this.form = this.formBuilder.group({
+        name: ['', [Validators.required, Validators.minLength(3)]],
+        description: ['', [Validators.required, Validators.minLength(4)]],
+        url: ['', [Validators.required, Validators.minLength(4)]],
+        price: ['', [Validators.required, Validators.minLength(4)]],
+      });
   }
   ngOnInit(): void {
-    this.userService.getUserData().subscribe((result) => { this.userData = result;
-      console.log(this.userData)})
-    
-  }
-  onSubmit() {
+    this.params$ = this.route.params.subscribe(params => {
+      this.userId = params["id"]
+      this.nftService.loadNft(this.userId).subscribe((result)=> {
+        this.postData = result
+        this.nameValue = this.postData.name
+        this.descriptionValue = this.postData.description
+        this.urlValue = this.postData.pic
+        this.priceValue = this.postData.price
+        this.imgSrc = this.postData.pic
+        console.log(this.postData)
+      })
+    })
 
+  }
+
+  onSubmit() {
     const nameControl = this.form.get('name')
     const descriptionControl = this.form.get('description')
     const urlControl = this.form.get('url')
@@ -60,16 +79,17 @@ export class CreateComponent implements OnInit {
       console.log(description)
       console.log(pic)
       console.log(price)
-      this.nftService.createNft(
+      console.log(this.userId)
+      this.nftService.editNft(
         name,
         description,
         price,
         pic,
-        this.userData
+        this.userId
         )
         .subscribe((response) => {
-          
-          this.router.navigate(['/catalog/details/' + response.post._id])
+          console.log(response)
+          this.router.navigate(['catalog/details/' + this.postData._id])
         })
 
     } else {
@@ -90,7 +110,6 @@ export class CreateComponent implements OnInit {
       }
     }
   }
-
   urlHandler() {
     let data = this.form.get('url')
     this.imgSrc = data?.value

@@ -19,6 +19,7 @@ import { LikedComponent } from './liked/liked.component';
 import { OwnedComponent } from './owned/owned.component';
 import { ChoosePicComponent } from './choose-pic/choose-pic.component';
 import { CreateComponent } from './create/create.component';
+import { EditComponent } from './edit/edit.component';
 
 
 
@@ -37,7 +38,8 @@ import { CreateComponent } from './create/create.component';
     LikedComponent,
     OwnedComponent,
     ChoosePicComponent,
-    CreateComponent
+    CreateComponent,
+    EditComponent
   ],
   imports: [
     CommonModule,

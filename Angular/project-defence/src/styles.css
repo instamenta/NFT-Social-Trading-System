@@ -187,6 +187,7 @@ section.personal-art {
     width: 400px;
     height: 400px;
     object-fit: center;
+    border: 3px solid #289FED ;
 
     transition-duration: 1s;
 
