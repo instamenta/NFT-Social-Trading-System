@@ -24,7 +24,7 @@ router.route('/catalog/:id').get(detailsNft)
 router.route('/catalog/:id/edit').post(editNft)
 router.route('/catalog/:id/delete').get(deleteNft)
 
-router.route('/like/:id/:usernames').post(likeNft)
+router.route('/like/:id/:usernames').get(likeNft)
 router.route('/own/:id/:usernames').post(ownNft)
 
 router.route('/url').post(getNftUrl)

@@ -83,7 +83,7 @@ const deleteNft = async (req, res) => {
 
 const likeNft = async (req, res) => {
 
-    const [user, creator] = req.params.usernames.split('=')
+    const user = req.params.usernames
     const nftId = req.params.id
 
     const nftData = await Nft.findOne({ _id: nftId }).lean()
@@ -92,7 +92,7 @@ const likeNft = async (req, res) => {
         const responce = await Nft.findOneAndUpdate({ _id: nftId }, { $pull: { likes: user } }).lean();
         await User.findOneAndUpdate({ username: user }, { $pull: { likedNft: nftId } }).lean();
         res.status = 200
-        res.json(responce)
+        res.json({responce})
 
     } else {
         const responce = await Nft.findOneAndUpdate({ _id: nftId }, { $push: { likes: user } }).lean();
@@ -104,7 +104,7 @@ const likeNft = async (req, res) => {
 }
 const ownNft = async (req, res) => {
 
-    const [user, creator] = req.params.usernames.split('=')
+    const user = req.params.usernames
     const nftId = req.params.id
     const nftUrl = req.body.picUrl.toString()
 

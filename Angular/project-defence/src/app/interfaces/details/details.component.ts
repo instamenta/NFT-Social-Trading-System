@@ -10,37 +10,46 @@ import { UserService } from 'src/app/auth/user.service';
 })
 export class DetailsComponent implements OnInit {
   
+  params$: any;
+
   nftData: any | null = null
   nftId: any;
-  params$: any;
   creatorData: any;
   currentUser: any;
+  
   isCreator: any = false;
   isLiked:any = false; 
   isOwned: any = false;
+  
   ownedText: any = 'own'
   likedText: any = 'like'
 
-  constructor( private route: ActivatedRoute, private nftService: NftService, private userService: UserService ,private router: Router) {}
+  constructor( 
+    private route: ActivatedRoute, 
+    private nftService: NftService, 
+    private userService: UserService ,
+    private router: Router
+    ) {}
   
   ngOnInit() {  
 
-    this.params$ = this.route.params.subscribe(params => {
+    this.params$ = this.route.params
+    .subscribe(params => {
       this.nftId = params["id"]
     })
-    this.userService.getUserData().subscribe((result) => {
+    this.userService.getUserData()
+    .subscribe((result) => {
       this.currentUser = result
       console.log(this.currentUser)
     })
 
-    this.nftData = this.nftService.loadNft(this.nftId).subscribe({
+    this.nftData = this.nftService.loadNft(this.nftId)
+    .subscribe({
       next: (nftData) => {
         this.nftData = nftData
-        console.log(nftData)
-        this.userService.getUser(nftData.creator).subscribe(result => {
+        this.userService.getUser(nftData.creator)
+        .subscribe(result => {
           this.creatorData = result
-          console.log(this.currentUser._id == this.creatorData._id)
-          console.log(this.currentUser._id + '==' + this.creatorData._id)
           
           if(this.currentUser._id == this.creatorData._id) {
             this.isCreator = true
@@ -60,10 +69,30 @@ export class DetailsComponent implements OnInit {
   }
 
   deleteHandler() {
-    console.log('delete')
-    this.nftService.deleteNft(this.nftData._id).subscribe((result) => {
+    this.nftService.deleteNft(this.nftData._id)
+    .subscribe((result) => {
       this.router.navigate(['/catalog'])
     })
   }
 
+  likeHandler() {
+    this.nftService.likeNft(this.nftId, this.currentUser.username)
+    .subscribe((result) => {
+      if(this.likedText == "like") {
+        this.likedText = "liked"
+      } else {
+        this.likedText = "like"
+      }
+    })
+  }
+  ownHandler() {
+    this.nftService.ownNft( this.nftId, this.currentUser.username, this.nftData.pic)
+    .subscribe((result) => {
+      if(this.ownedText == "own") {
+        this.ownedText = "owned"
+      } else {
+        this.ownedText = "own"
+      }
+    })
+  }
 }

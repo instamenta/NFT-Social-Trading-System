@@ -23,10 +23,10 @@
                 </div>
                 <div class="details-action-btn">
         
-                        <button *ngIf="isCreator == false" onClick={likeHandler} class="action-button">
+                        <button *ngIf="isCreator == false" (click)="ownHandler()" class="action-button" >
                             {{ownedText}}
                         </button>
-                        <button *ngIf="isCreator == false" onClick={ownHandler} class="action-button">
+                        <button *ngIf="isCreator == false" (click)="likeHandler()" class="action-button">
                             {{likedText}}
                         </button>
 
