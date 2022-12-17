@@ -22,7 +22,9 @@ const getUserData = async(req, res) => {
 const registerUser = async (req, res) => {
     let { username, email, birthday, password } = req.body
     const salt = await bcrypt.genSalt(10)
-    password = await bcrypt.hash(password, salt)    
+
+    const hashedPassword = await bcrypt.hash(password, salt)
+    password = hashedPassword;    
     let user
     try { user = await User.create({
             username,

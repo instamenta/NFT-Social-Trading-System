@@ -37,7 +37,6 @@ export class DetailsComponent implements OnInit {
     this.userService.getUserData()
       .subscribe((result) => {
         this.currentUser = result
-        console.log(this.currentUser)
       })
 
     this.nftData = this.nftService.loadNft(this.nftId)

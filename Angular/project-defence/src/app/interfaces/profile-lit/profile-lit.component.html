@@ -1,38 +1,56 @@
-
+<div class=" layer-font">
+    User List
+    <i class="fa-solid fa-crown"></i>
+</div>
 <div *ngFor="let userData of userList" class="container">
-    
+
     <form class="form-container" routerLink="/profile/{{userData._id}}">
         <div class="grid-object">
             <img src="{{userData.pic}}" class="profile-picture" />
-
         </div>
+
         <div class="grid-object">
             <h1 class="profile-info">{{userData.username}}</h1>
-            
             <h2 class="profile-info">"{{userData.bio.slice(0, 100)}}"</h2>
-            
-            
-            
         </div>
-        
 
         <div class="grid-object">
-            
+
             <label class="socials-label">{{userData.username}}'s Socials:</label>
-            <a class="profile-socials" href="https://www.linkedin.com/in/jan-milenkov-370bb3241/"><i class="fa-brands fa-linkedin"></i>linked-in </a>
-            <a class="profile-socials" href="https://github.com/instamenta"><i class="fa-brands fa-square-github"></i>git-hub </a>
-            <a class="profile-socials" href="https://www.facebook.com/"><i class="fa-brands fa-square-facebook"></i>facebook </a>
-            <a class="profile-socials last" href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i>instagram </a>
+            <a class="profile-socials" href="https://www.linkedin.com/in/jan-milenkov-370bb3241/">
+                <i class="fa-brands fa-linkedin"></i>
+                linked-in
+            </a>
+            <a class="profile-socials" href="https://github.com/instamenta">
+                <i class="fa-brands fa-square-github"></i>
+                git-hub
+            </a>
+            <a class="profile-socials" href="https://www.facebook.com/">
+                <i class="fa-brands fa-square-facebook"></i>
+                facebook
+            </a>
+            <a class="profile-socials last" href="https://www.instagram.com/">
+                <i class="fa-brands fa-instagram"></i>
+                instagram
+            </a>
 
             <div class="grid-two">
                 <div>
-                    
-                    <h3 class="profile-info"><i class="fa-solid fa-heart"></i> Likes: {{userData.likedNft.length}} <a class="see-list">see list</a></h3>
-                    
-            </div>
-            
-                <h3 class="profile-info"><span class="hashtag">#</span> Owns: {{userData.ownedNft.length}} <a class="see-list">see list</a></h3>
-                
+                    <h3 class="profile-info">
+                        <i class="fa-solid fa-heart"></i>
+                        Likes: {{userData.likedNft.length}}
+                        <a class="see-list">
+                            see list
+                        </a>
+                    </h3>
+                </div>
+
+                <h3 class="profile-info">
+                    <span class="hashtag">#</span> Owns: {{userData.ownedNft.length}} 
+                    <a class="see-list">
+                        see list
+                    </a>
+                </h3>
             </div>
         </div>
     </form>

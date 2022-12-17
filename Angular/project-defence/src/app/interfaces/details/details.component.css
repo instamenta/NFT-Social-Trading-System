@@ -20,7 +20,7 @@
     font-family: "Times New Roman", Times, serif;
     border-top: 3px solid rgb(195, 194, 201);
     border-bottom: 3px solid rgb(195, 194, 201);
-    grid-template-rows: 110px 196px 60px 60px;
+    grid-template-rows: 140px 250px 90px 90px;
     padding: 0px;
     margin-bottom: 20px;
 }
@@ -54,12 +54,20 @@
 }
 
 .details-price {
+    
+
     margin-top: 20px;
     height: 0%;
     font-size: 40px;
     text-align: center;
     font-weight: 700;
     user-select: none;
+    margin-bottom: 30px;
+}
+.price-container {
+    position:relative;
+    bottom: 0;
+    right: 0;
 }
 
 .go-back-btn {
@@ -137,6 +145,7 @@
 }
 
 .action-button {
+    margin: 70px 0;
     font-family: 'Bebas Neue', cursive;
     font-size: 1.7rem;
     padding: 6px 24px;

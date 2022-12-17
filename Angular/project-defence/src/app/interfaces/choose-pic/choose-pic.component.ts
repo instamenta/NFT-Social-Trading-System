@@ -42,7 +42,6 @@ export class ChoosePicComponent {
     })
   }
   changePicHandler($event: any) {
-    console.log($event.target.src)
     const url = $event.target.src
     this.userService.changeProfilePicture(this.userData._id, url)
     .subscribe((res) => {

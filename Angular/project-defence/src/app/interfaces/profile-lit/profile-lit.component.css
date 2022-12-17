@@ -4,14 +4,16 @@ div.container{
     align-items: center;
     padding-top: 50px;
     padding-bottom: 16px;
-    
+}
+div.container:last-of-type {
+    margin-bottom: 100px;
 }
 form.form-container {
     display: grid;
     grid-template-columns: 1fr 500px 1fr;
     width: 90vw;
-    border-top: 10px  solid rgb(198, 198, 198);  
-    border-left: 10px solid rgb(198, 198, 198);  
+    border-top: 5px  solid #289FED;
+    border-left: 5px solid #289FED;  
     
 background-color:  rgb(229, 229, 229);  
     border-radius: 3rem;

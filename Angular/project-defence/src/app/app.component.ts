@@ -7,36 +7,21 @@ import { UserService } from './auth/user.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent  {
-  // implements OnInit
   title = 'project-defence';
   userData: any;
   isUser: any = false;
 
   constructor(private userService: UserService) {
-    this.userService.getUserData().subscribe((result) => {
 
-        this.userData = result
+    this.userService.getUserData()
+    .subscribe((data) => {
+        this.userData = data
+        
         if(this.userData.message) {
           this.isUser = false
-
         } else {
           this.isUser = true
         }
       })
   }
-  
-  // ngOnInit(): void {
-
-    // this.userData = this.userService.getUserData().subscribe((result) => {
-
-
-    //   this.userData = result
-    //   if(this.userData.message) {
-    //     this.isUser = false
-    //   } else {
-    //     this.isUser = true
-    //   }
-    //   console.log(this.userData)
-    // })
-  // }
 }
