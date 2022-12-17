@@ -1,47 +1,66 @@
 <div class="page-container">
-    <form  [formGroup]="form" (ngSubmit)="onSubmit()" class="create-form">
-        <h1 class="art">Art Creator</h1>
-        <div class="grid-container">
-            <div class="grid-object">
-                <label for="" class="input-label">
-                  Art's Name:  
-                </label>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="create-form">
+    <h1 class="art">Art Creator</h1>
+    <div class="grid-container">
+      <div class="grid-object">
+        <label for="" class="input-label">
+          Art's Name:
+        </label>
 
-                <input id="name" formControlName="name" name="name" type="text" class="create-input">
-                <label *ngIf="nameError==true" class="auth-error">
-                  name must be atleast 4 symbols long
-                </label>
-                <label for="" class="input-label">
-                    Art's  Description:  
-                  </label>
-       
-                  <input id="description" formControlName="description" name="description" type="text" class="create-input">
-                  <label *ngIf="descriptionError==true" class="auth-error">
-                    description must be atleast 4 symbols long
-                  </label>
-                  <label for="" class="input-label">
-                    Art's  Url:
-                  </label>
-                  
-                  <input (change)="urlHandler()" id="url" formControlName="url" name="url"  type="url" class="create-input">
-                  <label *ngIf="urlError==true" class="auth-error">
-                    url must be atleast 4 symbols long
-                  </label>
-                  <label for="" class="input-label">
-                    Art's Price:  
-                  </label>
-                  
-                  <input id="price" formControlName="price" name="price"  type="number" class="create-input">
-                  <label *ngIf="priceError==true" class="auth-error">
-                    price must be atleast 4 symbols long
-                  </label>
-                  <button class="submit">Create Art</button>
+        <input id="name" formControlName="name" name="name" type="text" class="create-input">
+        <label *ngIf="
+                (form.get('name').hasError('required') ||
+                form.get('name').hasError('minlength') ||
+                form.get('name').hasError('maxlength'))
+                && form.get('name').touched
+                " class="auth-error">
+          Name must be betweem 3-14 symbols long!
+        </label>
+        <label class="input-label">
+          Art's Description:
+        </label>
 
-            </div>
-            
-            <div class="preview-container">
-                <img class="art-image" src="{{imgSrc}}" alt="">
-            </div>
-        </div>
-    </form>
+        <input id="description" formControlName="description" name="description" type="text" class="create-input">
+        <label *ngIf="
+        (form.get('description').hasError('required') ||
+        form.get('description').hasError('minlength'))
+        && form.get('description').touched
+        " class="auth-error">
+          Description must be at least 4 symbols long!
+        </label>
+
+        <label class="input-label">
+          Art's Url:
+        </label>
+        <input (change)="urlHandler()" id="url" formControlName="url" name="url" type="url" class="create-input">
+        <label *ngIf="
+        (form.get('url').hasError('required') ||
+        form.get('url').hasError('minlength'))
+        && form.get('url').touched
+        " class="auth-error">
+          Url must be valid!
+        </label>
+
+        <label class="input-label">
+          Art's Price:
+        </label>
+        <input id="price" formControlName="price" name="price" type="number" class="create-input">
+        <label *ngIf="
+        (form.get('price').hasError('required') ||
+        form.get('price').hasError('min'))
+        && form.get('price').touched
+        " class="auth-error">
+          Price shoudn't be lower than 100$!
+        </label>
+
+        <button class="submit">
+          Create Art
+        </button>
+      </div>
+
+      <div class="preview-container">
+        <img class="art-image" src="{{imgSrc}}" alt="Preview-Image">
+      </div>
+    </div>
+  </form>
 </div>

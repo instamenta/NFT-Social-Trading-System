@@ -1,33 +1,33 @@
 <section class="personal-art top-art">
     <div class=" layer-font">
-        Art Page <i class="fa-sharp fa-solid fa-palette"></i>
+        Art Page
+        <i class="fa-sharp fa-solid fa-palette"></i>
     </div>
 </section>
+
 <div class="block">
     <input class="search" type="text" [(ngModel)]="searchText" (keyup)="search()">
     <button class="search">Search</button>
-    
 </div>
 
 <h2 *ngIf="notFound == false && notSearching == false" class="search-found">Nfts found = [ {{searchData.length}} ] </h2>
 <h2 *ngIf="notFound == false && notSearching == true" class="search-found">nft list = [ {{nftsData.length}} ] </h2>
 <h2 *ngIf="notFound == true " class="search"> Nothing Found </h2>
+
 <section class="container-huge">
     <div class="art-grid">
 
-        <!-- <div *ngFor="let nftData of nftsData" class="painting-container"> -->
-            <ng-template [ngIf]="searchCriteria == false">
-                <div *ngFor="let nftData of nftsData" class="painting-container">
-                    <img class="painting" src="{{nftData.pic}}" routerLink="/catalog/details/{{nftData._id}}" />
-                </div>
-            </ng-template>
+        <ng-template [ngIf]="searchCriteria == false">
+            <div *ngFor="let nftData of nftsData" class="painting-container">
+                <img class="painting" src="{{nftData.pic}}" routerLink="/catalog/details/{{nftData._id}}" />
+            </div>
+        </ng-template>
 
-                    <!-- <div *ngFor="let nftData of nftsData" class="painting-container"> -->
-                        <ng-template [ngIf]="searchCriteria == true">
-                            <div *ngFor="let nftData of searchData" class="painting-container">
-                                <img class="painting" src="{{nftData.pic}}" routerLink="/catalog/details/{{nftData._id}}" />
-                            </div>
-                        </ng-template>
+        <ng-template [ngIf]="searchCriteria == true">
+            <div *ngFor="let nftData of searchData" class="painting-container">
+                <img class="painting" src="{{nftData.pic}}" routerLink="/catalog/details/{{nftData._id}}" />
+            </div>
+        </ng-template>
     </div>
 </section>
 

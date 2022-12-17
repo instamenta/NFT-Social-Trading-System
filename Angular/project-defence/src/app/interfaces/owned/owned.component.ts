@@ -14,21 +14,24 @@ export class OwnedComponent implements OnInit {
   nftArray: any = [];
   params$: any;
   userId: any;
-  constructor(private userService: UserService, public nftService: NftService, private route: ActivatedRoute) { }
+  constructor(
+    private userService: UserService,
+    public nftService: NftService,
+    private route: ActivatedRoute
+  ) { }
 
 
   ngOnInit(): void {
-    this.params$ = this.route.params.subscribe(params => {
+    this.params$ = this.route.params
+    .subscribe(params => {
       this.userId = params["id"]
     })
-    this.userService.getUser(this.userId).subscribe((result) => {
-
-
-      this.userData = result
-      console.log(this.userData)
-
+    this.userService.getUser(this.userId)
+    .subscribe((data) => {
+      this.userData = data
       this.userData.ownedNft.forEach((element: any) => {
-        this.nftService.loadNftByLink(element).subscribe(result => {
+        this.nftService.loadNftByLink(element)
+        .subscribe(result => {
           if (result != undefined) {
             this.nftArray.push(result)
           }

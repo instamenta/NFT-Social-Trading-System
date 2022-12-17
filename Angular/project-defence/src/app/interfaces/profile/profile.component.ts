@@ -20,22 +20,22 @@ export class ProfileComponent implements OnInit {
   constructor(private userService: UserService, private route: ActivatedRoute,) { }
 
   ngOnInit(): void {
-    this.params$ = this.route.params.subscribe(params => {
+    this.params$ = this.route.params
+    .subscribe(params => {
       this.userId = params["id"]
     })
     
-    this.userService.getUser(this.userId).subscribe((result) => {
-      this.userData = result
+    this.userService.getUser(this.userId)
+    .subscribe((data) => {
+      this.userData = data
       this.usernameValue = this.userData.username;
       this.descriptionValue = this.userData.bio;
-      this.userService.getUserData().subscribe((result) => {
+      this.userService.getUserData()
+      .subscribe((result) => {
         this.currentUserData = result
-        if (this.currentUserData.message) {
-  
-        } else {
+        if (this.currentUserData.message) { } else {
           if(this.userData.username == this.currentUserData.username) {
             this.isOwner = true
-            console.log(this.currentUserData.username == this.userData.username)
           }
         }
       })
@@ -44,11 +44,9 @@ export class ProfileComponent implements OnInit {
   
   editNameHandler() {
     this.userService.editUser(this.userId, this.usernameValue, this.userData.email)
-    console.log(this.usernameValue)
 
   }
   editBioHandler() {
     this.userService.editUserDescription(this.userId,this.descriptionValue)
-    console.log(this.descriptionValue)
   }
 }

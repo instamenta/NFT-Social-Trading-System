@@ -8,69 +8,47 @@ const getAllUsers = async (req,res) => {
     res.json(allUsersData)
 }
 const getUserData = async(req, res) => {
-
     let {token} = req.body;
-    
-
     if(token) {
         const tokenData = await decodeToken(token)
-
-
         if (token=="NOTOKEN") {
-        console.log('notoken2')
-
             res.json({message: 'NOTOKEN'})
         } else {
-            const userData = await User.findOne({_id: tokenData._id})
-
+            const userData = await User.findOne({_id: tokenData._id}).lean()
             res.json(userData) 
         }
     }
-
-    
 }
 const registerUser = async (req, res) => {
-    let { username, email, birthday, password } = req.body;
-    const salt = await bcrypt.genSalt(10);
-
-    if (password < 25 && password > 6) {
-        password = await bcrypt.hash(password, salt)
-    }
+    let { username, email, birthday, password } = req.body
+    const salt = await bcrypt.genSalt(10)
+    password = await bcrypt.hash(password, salt)    
     let user
-    try {
-        user = await User.create({
+    try { user = await User.create({
             username,
             email,
             birthday,
-            password
+            password,
         })
-    } catch (err) {
-        res.status(203)
-        res.end()
-    }
+    } catch (err) { res.end() }
     if (user) {
+        const token = await generateToken(user);
         res.status(200).json({
             _id: user._id,
             username: user.username,
             email: user.email,
             birthday: user.birthday,
             pic: user.pic,
-            token: generateToken(user._id)
+            token: token,
         })
-    } else {
-        res.status(203)
-        res.end()
-    }
-
+    } else { res.end() }
 }
 const authUser = async (req, res) => {
     try {
         const { username, password } = req.body;
         let user
         if (!username || !password) {
-            throw {
-                message: 'Invalid username or password'
-            }
+            throw { message: 'Invalid username or password' }
         }
         if (username) {
             user = await User.findOne({ username });
@@ -78,33 +56,20 @@ const authUser = async (req, res) => {
         if (!user) {
             throw { message: 'Invalid username or password' }
         }
-
         const valid = await bcrypt.compare(password, user.password)
-
         if (valid) {
             const token = await generateToken(user)
-
-            res.cookie('accessToken', token, {
-                httpOnly: true,
-            })
-
+            res.cookie('accessToken', token, { httpOnly: true })
             res.json({
                 _id: user._id,
                 username: user.username,
                 email: user.email,
                 birthday: user.birthday,
                 pic: user.pic,
-                token: token
+                token: token,
             })
-
-        } else {
-            throw { message: 'Invalid username or password' }
-        }
-
-    } catch (error) {
-        res.status = 203
-        res.json(error)
-    }
+        } else { throw { message: 'Invalid username or password' } }
+    } catch (error) { res.json(error) }
 
 }
 

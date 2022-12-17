@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from 'src/app/auth/user.service';
 import { NftService } from 'src/app/auth/nft.service';
 
 @Component({
@@ -7,18 +6,15 @@ import { NftService } from 'src/app/auth/nft.service';
   templateUrl: './home-view.component.html',
   styleUrls: ['./home-view.component.css']
 })
-export class HomeViewComponent implements OnInit{
+export class HomeViewComponent implements OnInit {
+  nftsData: any | null = null
 
-  nftsData: any | null = null  
-
-  constructor(private nftService: NftService) {}
-
+  constructor(private nftService: NftService) { }
+  
   ngOnInit(): void {
-    this.nftService.loadMostWanted(6).subscribe({
-      next: (nftsData) => {
+    this.nftService.loadMostWanted(6)
+      .subscribe((nftsData) => {
         this.nftsData = nftsData
-        console.log(nftsData)
-      }
-    })
+      })
   }
 }

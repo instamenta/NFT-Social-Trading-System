@@ -1,58 +1,57 @@
 <div class="container emp-profile">
     <form *ngIf="nftData != null">
-        
         <div class="details-grid">
             <div class='details-pic-container'>
-                <a>
-                    <img class="details-pic" src="{{nftData.pic}}" />
-                </a>
+                <a><img class="details-pic" src="{{nftData.pic}}" /></a>
             </div>
+
             <div class="details-info-container">
                 <div class="details-top">
                     <h1 class="details-name">{{nftData.name}}</h1>
                     <h1 class="details-info">{{nftData.info}}</h1>
                 </div>
+
                 <div>
-                    <!-- {nftData.description.length > 0 -->
-                            <h1 class="details-description">"{{nftData.description}}"</h1>
-                            <!--: <></>
-                        } -->
-                    <h1 class="details-creator">Made By: <a class="profile-link" routerLink="/profile/{{creatorData._id}}">{{creatorData.username}}</a></h1>
-                    <h1 class="details-creator">Likes:{{nftData.likes.length}} ♥</h1>
-                    <h1 class="details-creator">Owners:{{nftData.owners.length}} #</h1>
+                    <h1 class="details-description">"{{nftData.description}}"</h1>
+                    <h1 class="details-creator">
+                        Made By:
+                        <a class="profile-link"routerLink="/profile/{{creatorData._id}}">
+                            {{creatorData.username}}
+                        </a>
+                    </h1>
+                    <h1 class="details-creator">
+                        Likes:{{nftData.likes.length}} ♥
+                    </h1>
+                    <h1 class="details-creator">
+                        Owners:{{nftData.owners.length}} #
+                    </h1>
                 </div>
+
                 <div class="details-action-btn">
-        
-                        <button *ngIf="isCreator == false" (click)="ownHandler()" class="action-button" >
-                            {{ownedText}}
-                        </button>
-                        <button *ngIf="isCreator == false" (click)="likeHandler()" class="action-button">
-                            {{likedText}}
-                        </button>
 
-                        <button  *ngIf="isCreator == true"  class="action-button" routerLink="/catalog/details/{{nftData._id}}/edit">
-                            Edit
-                        </button>
-                        <button  *ngIf="isCreator == true"  class="action-button" (click)="deleteHandler()">
-                            Delete  
-                        </button>
+                    <button *ngIf="isCreator == false" (click)="ownHandler()" class="action-button">
+                        {{ownedText}}
+                    </button>
 
+                    <button *ngIf="isCreator == false" (click)="likeHandler()" class="action-button">
+                        {{likedText}}
+                    </button>
+
+                    <button *ngIf="isCreator == true" class="action-button"
+                        routerLink="/catalog/details/{{nftData._id}}/edit">
+                        Edit
+                    </button>
+
+                    <button *ngIf="isCreator == true" class="action-button" (click)="deleteHandler()">
+                        Delete
+                    </button>
                 </div>
                 <div>
                     <h1 class="details-price">${{nftData.price}}</h1>
                 </div>
             </div>
             <div class="details-btn-container">
-                <!-- <Link to="/nft/catalog" class="go-back-btn">✘</Link>
-                    {isOwner
-                            ? <>
-                                <Link to={editUrl} class="details-options-btn">Edit</Link>
-                                <button onClick={deleteHandler} class="details-options-btn">Delete</button>
-                            </>
-                            : <></>} -->
             </div>
         </div>
-        <!-- : <h1>Not found</h1>
-        } -->
     </form>
 </div>

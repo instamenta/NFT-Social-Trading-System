@@ -6,6 +6,7 @@
     display: flex;
     justify-content: center
 }
+
 .create-form {
     padding: 1rem;
     width: 80%;
@@ -16,7 +17,7 @@
         5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF,
         15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF,
         25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-        box-shadow:
+    box-shadow:
         5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF,
         15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF,
         25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0, 0, 0, 0);
@@ -32,13 +33,16 @@ h1.art {
     font-family: 'Bebas Neue', cursive;
     padding-bottom: 3rem;
 }
+
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
+
 .grid-object {
-width: 100%;
+    width: 100%;
 }
+
 .create-input {
     width: 80%;
     padding: 4px 16px;
@@ -46,12 +50,14 @@ width: 100%;
     font-size: 2rem;
     margin-left: 2rem;
 }
+
 .input-label {
     font-size: 2rem;
     display: block;
     font-family: 'Bebas Neue', cursive;
     margin-left: 2rem;
 }
+
 .preview-container {
     width: 650px;
     height: 450px;
@@ -67,16 +73,18 @@ width: 100%;
         5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF,
         15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF,
         25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-        box-shadow:
+    box-shadow:
         5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF,
         15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF,
         25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-        border-radius: 16px;
-        transition: all 0.5s ease-out;
+    border-radius: 16px;
+    transition: all 0.5s ease-out;
 }
+
 .art-image:hover {
     border-radius: 50%;
 }
+
 button.submit {
     width: 30%;
     padding: 4px 24px;
@@ -87,15 +95,16 @@ button.submit {
     border-radius: 16px 0 16px 0;
     font-family: 'Bebas Neue', cursive;
     box-shadow:
-    5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF,
-    15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF,
-    25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+        5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF,
+        15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF,
+        25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0, 0, 0, 0);
     box-shadow:
-    5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF,
-    15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF,
-    25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+        5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF,
+        15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF,
+        25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0, 0, 0, 0);
     transition: all 0.5s ease-out;
 }
+
 button.submit:hover {
     scale: 1.1;
     background-color: #69abd6;
@@ -104,10 +113,10 @@ button.submit:hover {
 }
 
 .auth-error {
-	color:red;
-	font-size: 1.5rem;
-	font-weight: 800;
-   display: block;
-   margin: auto ;
-   text-align: center;
+    color: red;
+    font-size: 1.5rem;
+    font-weight: 800;
+    display: block;
+    margin: auto;
+    text-align: center;
 }

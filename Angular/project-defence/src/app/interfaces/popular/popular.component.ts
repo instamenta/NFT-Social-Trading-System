@@ -7,17 +7,15 @@ import { NftService } from 'src/app/auth/nft.service';
   styleUrls: ['./popular.component.css']
 })
 export class PopularComponent implements OnInit {
-
   nftsData: any | null = null  
 
   constructor(private nftService: NftService) {}
 
   ngOnInit(): void {
-    this.nftService.loadMostWantedAll().subscribe({
-      next: (nftsData) => {
-        this.nftsData = nftsData
-        console.log(nftsData)
+    this.nftService.loadMostWantedAll()
+    .subscribe((data) => {
+        this.nftsData = data
       }
-    })
+    )
   }
 }

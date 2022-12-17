@@ -14,15 +14,12 @@ export class CatalogComponent implements OnInit{
   searchData: any = [];
   notFound: any = false
   notSearching:any = true;
+
   constructor(private nftService: NftService) {}
 
   ngOnInit(): void {
     this.nftService.loadNfts()
-    .subscribe({
-      next: (nftsData) => {
-        this.nftsData = nftsData
-      }
-    })
+    .subscribe((data) => { this.nftsData = data})
   }
   search() {
     this.searchData = this.nftsData.filter((data: any) => {
@@ -31,14 +28,15 @@ export class CatalogComponent implements OnInit{
     if(this.searchData.length > 0) {
       this.searchCriteria = true
       this.notFound = false
+      
       if(this.searchText.length <= 0) {
         this.notSearching = true;
       } else {
         this.notSearching = false;
       }
-      
     } else {
       this.searchCriteria = false
+      
       if(this.searchText.length > 0) {
         this.notFound = true
         this.notSearching = false;
