@@ -55,7 +55,6 @@ export class DetailsComponent implements OnInit {
       .subscribe((nftData) => {
           this.nftData = nftData
           this.commentList = nftData.comments
-          console.log(this.nftData.comments)
           this.userService.getUser(nftData.creator)
             .subscribe(data => {
               this.creatorData = data
@@ -109,7 +108,6 @@ export class DetailsComponent implements OnInit {
     if(this.comment && this.comment?.length > 0) {
     this.nftService.commentNft(this.comment, this.currentUser.username, this.nftId, this.currentUser.pic)
     .subscribe((res) => {
-      console.log(res)
       this.nftData = res
       this.commentList = this.nftData?.comments
       this.comment = ''

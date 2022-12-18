@@ -33,7 +33,7 @@ const routes: Routes = [
   {path: 'catalog/popular', component: PopularComponent},
   {path: 'catalog/details/:id', component: DetailsComponent},
   {path: 'catalog/details/:id/edit', component: EditComponent},
-  {path: '404', component: ErrorComponent},
+  {path: '**', component: ErrorComponent},
 
 ];
 

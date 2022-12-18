@@ -97,7 +97,6 @@ const getNftUrl = async (req, res) => {
 
 const commentNtf = async (req, res) => {
     const NFT = await Nft.findById(req.params.id);
-    console.log(req.body)
     NFT.comments.push({
         text: req.body.text,
         author: req.body.author,
