@@ -1,6 +1,7 @@
 <div class="container emp-profile">
     <form *ngIf="nftData != null">
         <div class="details-grid">
+            
             <div class='details-pic-container'>
                 <a><img class="details-pic" src="{{nftData.pic}}" /></a>
             </div>
@@ -15,7 +16,7 @@
                     <h1 class="details-description">"{{nftData.description}}"</h1>
                     <h1 class="details-creator">
                         Made By:
-                        <a class="profile-link"routerLink="/profile/{{creatorData._id}}">
+                        <a class="profile-link" routerLink="/profile/{{creatorData._id}}">
                             {{creatorData.username}}
                         </a>
                     </h1>
@@ -55,3 +56,38 @@
         </div>
     </form>
 </div>
+<div class="comment-list" *ngIf="commentList != false">
+    <h1 class="comment-count">Comments = [ {{commentList.length}} ]</h1>
+    <div class="comment-list-container" *ngFor="let comment of commentList">
+        <div class="comment">
+            <div class="comment-data">
+                <div class="comment-aligner">
+                    <img class="comment-img" src="{{comment.pic}}" />
+                    <span class="comment-name">{{comment.author}}</span>
+                </div>
+                <span class="comment-date">{{comment.date}}</span>
+
+            </div>
+
+            <div class="comment-text-container">
+
+                <h2 class="comment-text">> "{{comment.text}}"</h2>
+                <i class="fa-solid fa-trash"></i>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="comment-list" *ngIf="commentList == true || commentList.length==0">
+    <h1 class="comment-count">[ No comments ]</h1>
+    <h1 class="comment-btf " *ngIf="commentList.length == 0">
+        Hurry up be the first one to leave comment!
+    </h1>
+
+</div>
+<section class="comment-section">
+    <form (ngSubmit)="commentHandler()" class="comment-container" *ngIf="currentUser">
+        <input class="comment-field" type="text" [(ngModel)]="comment" name="text" required>
+        <button class="comment-button" type="submit">Comment</button>
+    </form>
+</section>

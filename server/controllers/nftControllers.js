@@ -94,4 +94,16 @@ const getNftUrl = async (req, res) => {
         res.json(data)
     }
 }
-module.exports = { getNftUrl, uploadNft, catalogNft, detailsNft, editNft, deleteNft, likeNft, ownNft, latestNft, mostWantedNft }
+
+const commentNtf = async (req, res) => {
+    const NFT = await Nft.findById(req.params.id);
+    console.log(req.body)
+    NFT.comments.push({
+        text: req.body.text,
+        author: req.body.author,
+        pic: req.body.pic,
+    });
+    await NFT.save();
+    res.json(NFT);
+}
+module.exports = { getNftUrl, uploadNft, catalogNft, detailsNft, editNft, deleteNft, likeNft, ownNft, latestNft, mostWantedNft, commentNtf }

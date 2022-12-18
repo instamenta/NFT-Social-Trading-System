@@ -47,16 +47,17 @@ button.search:hover{
 }
 h2.search {
     margin: 24px;
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     color: red;
     display: block;
     font-family: 'Bebas Neue', cursive;
 letter-spacing: 2px;
     text-align: center;
+    
 }
 h2.search-found {
     margin: 24px;
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     color:#289FED;
     display: block;
     font-family: 'Bebas Neue', cursive;

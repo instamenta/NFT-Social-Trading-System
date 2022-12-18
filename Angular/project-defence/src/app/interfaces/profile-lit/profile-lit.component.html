@@ -2,6 +2,11 @@
     User List
     <i class="fa-solid fa-crown"></i>
 </div>
+<div class="data-container">
+    <h1 class="data">
+        Currently we have [ {{userList.length}} ] users Worldwide!
+    </h1>
+</div>
 <div *ngFor="let userData of userList" class="container">
 
     <form class="form-container" routerLink="/profile/{{userData._id}}">
@@ -39,17 +44,13 @@
                     <h3 class="profile-info">
                         <i class="fa-solid fa-heart"></i>
                         Likes: {{userData.likedNft.length}}
-                        <a class="see-list">
-                            see list
-                        </a>
+
                     </h3>
                 </div>
 
                 <h3 class="profile-info">
                     <span class="hashtag">#</span> Owns: {{userData.ownedNft.length}} 
-                    <a class="see-list">
-                        see list
-                    </a>
+
                 </h3>
             </div>
         </div>

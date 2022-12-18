@@ -18,15 +18,21 @@ export class DetailsComponent implements OnInit {
   isCreator: any = false;
   isLiked: any = false;
   isOwned: any = false;
+  isGuest: any = true;
 
   ownedText: any = 'own'
   likedText: any = 'like'
+
+  comment:any;
+  commentList:any = false;
+
 
   constructor(
     private route: ActivatedRoute,
     private nftService: NftService,
     private userService: UserService,
     private router: Router
+
   ) { }
 
   ngOnInit() {
@@ -36,12 +42,20 @@ export class DetailsComponent implements OnInit {
       })
     this.userService.getUserData()
       .subscribe((result) => {
-        this.currentUser = result
+        const resultData = result
+        if(resultData.hasOwnProperty('message')) {
+          this.isGuest=true;
+        } else {
+          this.isGuest=false
+        this.currentUser = resultData
+        }
       })
 
     this.nftData = this.nftService.loadNft(this.nftId)
       .subscribe((nftData) => {
           this.nftData = nftData
+          this.commentList = nftData.comments
+          console.log(this.nftData.comments)
           this.userService.getUser(nftData.creator)
             .subscribe(data => {
               this.creatorData = data
@@ -91,4 +105,16 @@ export class DetailsComponent implements OnInit {
         }
       })
   }
+  commentHandler() {
+    if(this.comment && this.comment?.length > 0) {
+    this.nftService.commentNft(this.comment, this.currentUser.username, this.nftId, this.currentUser.pic)
+    .subscribe((res) => {
+      console.log(res)
+      this.nftData = res
+      this.commentList = this.nftData?.comments
+      this.comment = ''
+    });
+    }
+  }
+
 }

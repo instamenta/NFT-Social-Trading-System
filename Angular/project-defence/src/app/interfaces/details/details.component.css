@@ -1,13 +1,15 @@
 .details-pic {
-    width: 600px;
-    height: 600px;
+    width: 604px;
+    height: 604px;
     border-radius: 20px;
     user-select: none;
 }
 
 .details-grid {
     display: grid;
+    border-radius: 20px;
     grid-template-columns: 600px 800px 80px;
+    
 }
 
 .details-pic-container {
@@ -17,9 +19,8 @@
 .details-info-container {
     display: grid;
     padding-left: 0px;
+
     font-family: "Times New Roman", Times, serif;
-    border-top: 3px solid rgb(195, 194, 201);
-    border-bottom: 3px solid rgb(195, 194, 201);
     grid-template-rows: 140px 250px 90px 90px;
     padding: 0px;
     margin-bottom: 20px;
@@ -97,8 +98,16 @@
     grid-template-columns: 1fr;
     grid-template-rows: 330px 60px;
     text-align: center;
-    border-top: 3px solid rgb(195, 194, 201);
-    border-bottom: 3px solid rgb(195, 194, 201);
+    background-color: #289FED;
+    box-shadow:
+        5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF,
+        15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF,
+        25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow:
+        5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF,
+        15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF,
+        25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+
     user-select: none;
 }
 
@@ -129,7 +138,7 @@
 
 .container {
     padding-top: 40px;
-    padding-bottom: 150px;
+    padding-bottom: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -170,4 +179,176 @@
     scale: 1.1;
     background-color: #5FB8FF;
     color: white;
+}
+
+section.comment-section {
+    width: 100vw;
+    margin-bottom: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form.comment-container {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+}
+label.comment-label {
+    font-size: 3rem;
+    color: #289FED;
+}
+input.comment-field {
+    font-size: 2.4rem;
+    border-top-left-radius: 2rem;
+    width: 40%;
+    padding: 4px 10px;
+    border: 2px solid #289FED;
+    transition: all 0.4s ease-out;
+    box-shadow:
+    5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF,
+    15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF,
+    25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+box-shadow:
+    5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF,
+    15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF,
+    25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+
+}
+input.comment-field:focus {
+    width: 45%;
+}
+button.comment-button {
+    transition: all 0.4s ease-out;
+    font-size: 2.4rem;
+    margin-left: 1.5rem;
+    border-bottom-right-radius: 2rem;
+    border: 2px solid #289FED;
+    color: black;
+    text-align: center;
+    padding: 4px 10px;
+    box-shadow:
+    5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF,
+    15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF,
+    25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+box-shadow:
+    5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF,
+    15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF,
+    25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 2px;
+    -webkit-text-stroke: 1px #000000;
+}
+button.comment-button:hover {
+    background-color: #5FB8FF;
+    color: white;
+    margin-left: 3rem;
+    scale: 1.1;
+    letter-spacing: 4px;
+}
+
+
+div.comment-list {
+    display: grid;
+    grid-template-columns: 1fr;
+
+}
+div.comment-list-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+}
+div.comment {
+    width: 55%;
+    border-radius: 32px 0 32px 0;
+}
+.comment-img {
+    margin: 4px 30px 4px 4px;   
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+}
+.comment-name {
+    margin-right: 100   px;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: white;
+    -webkit-text-stroke: 1px #289FED;
+}
+.comment-date {
+    margin: 4px 20px;
+    font-size: 1.6rem;
+    color: white;
+}
+.comment-text {
+    font-size: 1.5rem;
+    width: 100%;
+}
+.comment-data {
+    transition: all 0.3s ease-out;
+    display: flex;
+    align-items:flex-start;
+    justify-content: space-between;
+    background-color: #A1D8FF;
+    border-top-left-radius: 32px;
+    border-bottom-right-radius: 32px    ;
+    border: 4px solid #289FED;
+}
+.comment-data:hover {
+    background-color: #289FED;
+    color: white;
+    box-shadow:
+    5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF,
+    15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF,
+    25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+box-shadow:
+    5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF,
+    15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF,
+    25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    
+    scale: 1.1;
+    margin-bottom: 40px;
+    
+}
+.comment-aligner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.comment-text-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    width: 80%;
+    padding: 8px 10px 15px 10px;
+    margin: 0px 10% 10px 10%;
+    border: 4px solid #289FED;
+    border-top: none;
+}
+.fa-trash {
+    transition: all 0.3s ease-out;
+    font-size: 2.2rem;
+}
+.fa-trash:hover {
+    scale: 1.2  ;
+    color: #289FED;
+}
+h1.comment-count {
+    display: block;
+    text-align: center;
+    font-size: 2.5rem;
+    color: #289FED;
+    font-family: 'Bebas Neue', cursive;
+letter-spacing: 3px;
+}
+h1.comment-btf {
+    display: block;
+    text-align: center;
+    font-size: 2rem;
+    color: #5aace3;
+    font-family: 'Bebas Neue', cursive;
+letter-spacing: 2px;
 }
