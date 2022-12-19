@@ -60,12 +60,12 @@
     <h1 class="comment-count">Comments = [ {{commentList.length}} ]</h1>
     <div class="comment-list-container" *ngFor="let comment of commentList">
         <div class="comment">
-            <div class="comment-data">
-                <div class="comment-aligner">
+            <div class="comment-data" (click)="commentRelocationHandler($event)" id="{{comment.author}}">
+                <div class="comment-aligner" >
                     <img class="comment-img" src="{{comment.pic}}" />
                     <span class="comment-name">{{comment.author}}</span>
                 </div>
-                <span class="comment-date">{{comment.date}}</span>
+                <span class="comment-date">{{comment.date | date: 'd/MMM/yy, hh:mm'}}</span>
 
             </div>
 

@@ -13,6 +13,14 @@ const getUser = async (req, res) => {
         res.status = 204
     }
 }
+const getUserName = async (req, res) => {
+
+    const username = req.params.username
+    if (!username) { return }
+    const userData = await User.findOne({ username: username })
+    if (!userData) { return }
+    res.json(userData)
+}
 const setPictureUser = async (req, res) => {
 
     if (req.params && req.body) {
@@ -96,4 +104,4 @@ const editBioUser = async (req, res) => {
         res.json()
     }
 }
-module.exports = { getUser, setPictureUser, editUser, editBioUser }
+module.exports = { getUser, setPictureUser, editUser, editBioUser, getUserName }

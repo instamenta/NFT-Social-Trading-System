@@ -203,7 +203,7 @@ input.comment-field {
     border-top-left-radius: 2rem;
     width: 40%;
     padding: 4px 10px;
-    border: 2px solid #289FED;
+    border: 4px solid #289FED;
     transition: all 0.4s ease-out;
     box-shadow:
     5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF,
@@ -221,9 +221,9 @@ input.comment-field:focus {
 button.comment-button {
     transition: all 0.4s ease-out;
     font-size: 2.4rem;
-    margin-left: 1.5rem;
+    margin-left: 0.5rem;
     border-bottom-right-radius: 2rem;
-    border: 2px solid #289FED;
+    border: 4px solid #289FED;
     color: black;
     text-align: center;
     padding: 4px 10px;
@@ -242,7 +242,7 @@ box-shadow:
 button.comment-button:hover {
     background-color: #5FB8FF;
     color: white;
-    margin-left: 3rem;
+    margin-left: 2rem;
     scale: 1.1;
     letter-spacing: 4px;
 }
@@ -261,7 +261,7 @@ div.comment-list-container {
 }
 div.comment {
     width: 55%;
-    border-radius: 32px 0 32px 0;
+    border-radius: 4rem 0 4rem 0;
 }
 .comment-img {
     margin: 4px 30px 4px 4px;   
@@ -273,10 +273,9 @@ div.comment {
     margin-right: 100   px;
     font-family: 'Bebas Neue', cursive;
     font-size: 2.5rem;
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: 3px;
     color: white;
-    -webkit-text-stroke: 1px #289FED;
 }
 .comment-date {
     margin: 4px 20px;
@@ -292,14 +291,12 @@ div.comment {
     display: flex;
     align-items:flex-start;
     justify-content: space-between;
-    background-color: #A1D8FF;
+    background-color: #289FED;
     border-top-left-radius: 32px;
     border-bottom-right-radius: 32px    ;
     border: 4px solid #289FED;
 }
 .comment-data:hover {
-    background-color: #289FED;
-    color: white;
     box-shadow:
     5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF,
     15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF,
@@ -310,7 +307,7 @@ box-shadow:
     25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0, 0, 0, 0);
     
     scale: 1.1;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     
 }
 .comment-aligner {

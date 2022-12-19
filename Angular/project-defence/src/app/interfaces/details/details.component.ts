@@ -12,21 +12,21 @@ export class DetailsComponent implements OnInit {
 
   nftData: any | null = null
   nftId: any;
-  creatorData: any;
+  creatorData: any ;
   currentUser: any;
 
-  isCreator: any = false;
-  isLiked: any = false;
-  isOwned: any = false;
-  isGuest: any = true;
+  isCreator: Boolean = false;
+  isLiked: Boolean = false;
+  isOwned: Boolean = false;
+  isGuest: Boolean = true;
 
-  ownedText: any = 'own'
-  likedText: any = 'like'
+  ownedText: String = 'own'
+  likedText: String = 'like'
 
-  comment:any;
+  comment: String = '';
   commentList:any = false;
 
-
+  relocatePath: any;
   constructor(
     private route: ActivatedRoute,
     private nftService: NftService,
@@ -87,6 +87,7 @@ export class DetailsComponent implements OnInit {
   likeHandler() {
     this.nftService.likeNft(this.nftId, this.currentUser.username)
       .subscribe((res) => {
+        this.nftData = res
         if (this.likedText == "like") {
           this.likedText = "liked"
         } else {
@@ -97,6 +98,7 @@ export class DetailsComponent implements OnInit {
   ownHandler() {
     this.nftService.ownNft(this.nftId, this.currentUser.username, this.nftData.pic)
       .subscribe((res) => {
+        this.nftData = res
         if (this.ownedText == "own") {
           this.ownedText = "owned"
         } else {
@@ -114,5 +116,15 @@ export class DetailsComponent implements OnInit {
     });
     }
   }
-
+  commentRelocationHandler(event: any){
+    console.log(event.target.id)
+    const targetId = event.target.id
+    this.userService.getUserName(targetId)
+    .subscribe((res) => {
+        this.relocatePath = res
+        if(this.relocatePath.hasOwnProperty('_id')) {
+          this.router.navigate(['/profile/' + this.relocatePath._id])
+        }
+    })
+    }
 }

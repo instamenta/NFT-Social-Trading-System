@@ -10,7 +10,10 @@ import { UserService } from 'src/app/auth/user.service';
 export class ProfileComponent implements OnInit {
   userData: any;
   currentUserData: any;
-  isOwner: any = false;
+
+  isOwner: Boolean = false;
+  isGuest: Boolean = true;
+  
   userId: any;
   params$: any;
 
@@ -27,11 +30,14 @@ export class ProfileComponent implements OnInit {
     
     this.userService.getUser(this.userId)
     .subscribe((data) => {
-      this.userData = data
+      if(data.hasOwnProperty('_id') == false) return;
+      this.userData = data      
       this.usernameValue = this.userData.username;
       this.descriptionValue = this.userData.bio;
       this.userService.getUserData()
       .subscribe((result) => {
+        if(result.hasOwnProperty('_id') == false) return;
+        this.isGuest = false
         this.currentUserData = result
         if (this.currentUserData.message) { } else {
           if(this.userData.username == this.currentUserData.username) {

@@ -2,6 +2,8 @@
 
     <form *ngIf="userData" class="form-container">
         <div class="grid-object">
+
+
             <h1 *ngIf="isOwner == false" class="profile-info">
                 {{userData.username}}
             </h1>
@@ -9,8 +11,9 @@
                 "{{userData.bio.slice(0, 100)}}"
             </h2>
 
+            <!-- CREATOR VIEW -->
             <button *ngIf="isOwner == true" class="edit-button" (click)="editNameHandler()">
-                Edit Name
+                Edit Name <i class="fa-solid fa-user-pen"></i>
             </button>
 
             <input [(ngModel)]="usernameValue" [ngModelOptions]="{standalone: true}" *ngIf="isOwner == true"
@@ -20,11 +23,15 @@
                 class="edit-bio" type="text" value="{{descriptionValue}}">
 
             <button *ngIf="isOwner == true" class="edit-button" (click)="editBioHandler()">
-                Edit Bio
+                Edit Bio <i class="fa-regular fa-pen-to-square"></i>
             </button>
 
             <button *ngIf="isOwner == true" routerLink="/profile/{{userData._id}}/choose-pic" class="choose-pic">
                 Choose Profile-Art
+            </button>
+            <!-- User View -->
+            <button *ngIf="isOwner == false && isGuest==false" class="choose-pic">
+                Gift Nft
             </button>
 
         </div>

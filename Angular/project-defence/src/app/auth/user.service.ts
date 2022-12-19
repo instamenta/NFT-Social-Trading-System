@@ -28,8 +28,6 @@ export class UserService {
   }
 
   getUserData() {
-
-
     let token: any = this.cookieService.get('userData')
     if (!token) {
       token = "NOTOKEN"
@@ -44,4 +42,8 @@ export class UserService {
     return this.http.post(`http://localhost:3031/profile/${id}/select-profile-picture`, { url })
   }
 
+  getUserName(username: any) {
+    return this.http.get(`http://localhost:3031/profile/${username}/username`)
+
+  }
 }
