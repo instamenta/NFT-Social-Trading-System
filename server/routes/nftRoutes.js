@@ -11,6 +11,7 @@ const {
     mostWantedNft, 
     getNftUrl,
     commentNtf,
+    giftNft
 } = require('../controllers/nftControllers');
 
 const router = express.Router()
@@ -25,6 +26,7 @@ router.route('/catalog/:id').get(detailsNft)
 router.route('/catalog/:id/edit').post(editNft)
 router.route('/catalog/:id/delete').get(deleteNft)
 
+router.route('/own/gift').post(giftNft)
 router.route('/like/:id/:usernames').get(likeNft)
 router.route('/own/:id/:usernames').post(ownNft)
 

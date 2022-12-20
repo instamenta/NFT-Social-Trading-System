@@ -30,8 +30,8 @@
                 Choose Profile-Art
             </button>
             <!-- User View -->
-            <button *ngIf="isOwner == false && isGuest==false" class="choose-pic">
-                Gift Nft
+            <button *ngIf="isOwner == false && isGuest==false" class="choose-pic" routerLink="/profile/{{userData._id}}/gift">
+                Gift Nft <i class="fa-solid fa-gift"></i>
             </button>
 
         </div>

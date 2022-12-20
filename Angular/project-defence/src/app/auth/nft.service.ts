@@ -39,4 +39,7 @@ export class NftService {
   commentNft(text:any, author:any, nftId:any, pic: any) {
     return this.http.post<any>(`http://localhost:3031/nft/${nftId}/comments`, {text, author, pic})
   }
+  giftNft(currentUser: any, user: any, url: any) {
+    return this.http.post<any>(`http://localhost:3031/nft/own/gift`, {currentUser, user, url})
+  }
 }

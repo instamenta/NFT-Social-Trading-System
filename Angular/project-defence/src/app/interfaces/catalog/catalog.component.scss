@@ -1,0 +1,158 @@
+.block{ 
+    display: flex;
+    width: 100%;
+
+    justify-content: center;
+    align-items: center ;
+}
+.checkbox {
+    width: 10px;
+    height: 10px;
+}
+input.search{
+    width: 20%;
+    font-size: 2rem;
+    padding: 10px 40px;
+    border-top-left-radius: 16px;
+    transition: all 0.5s ease-out;
+    box-shadow:
+        5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF,
+        15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF,
+        25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    border: 2px solid #289FED;
+
+}
+input.search:focus-within {
+    width: 25%;
+}
+button.search{
+    font-family: 'Bebas Neue', cursive;
+border: 2px solid #289FED;
+transition: all 0.2s ease-out;
+box-shadow:
+        5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF,
+        15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF,
+        25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    width: 150px;
+    font-size: 2rem;
+    border-bottom-right-radius: 16px;
+text-align: center;
+    padding: 10px 0;
+    margin-left: 20px;
+    border: 2px solid #289FED;
+
+}
+button.search:hover{
+
+    scale: 1.2;
+    background-color: #5FB8FF;
+    color: white;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+h2.search {
+    margin: 24px;
+    font-size: 2.5rem;
+    color: red;
+    display: block;
+    font-family: 'Bebas Neue', cursive;
+letter-spacing: 2px;
+    text-align: center;
+    
+}
+.search-found {
+    margin: 24px;
+    font-size: 2.5rem;
+    color:#289FED;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 2px;
+
+    text-align: center;
+}
+$green: #56c080;
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+
+
+.toggle {
+	cursor: pointer;
+	display: inline-block;
+}
+.toggle-switch {
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+    margin: 0 30px;
+	display: inline-block;
+	background: #ccc;
+	border-radius: 16px;
+	width: 58px;
+	height: 32px;
+	position: relative;
+	vertical-align: middle;
+	transition: background 0.25s;
+    transition: all 0.5s linear;
+
+    
+	&:before,
+	&:after {
+		content: "";
+	}
+	&:before {
+		display: block;
+		background: linear-gradient(to bottom, #fff 0%,#eee 100%);
+		border-radius: 50%;
+		box-shadow: 0 0 0 1px rgba(0,0,0,0.25);
+		width: 24px;
+		height: 24px;
+		position: absolute;
+		top: 4px;
+		left: 4px;
+		transition: left 0.25s;
+	}
+	.toggle:hover &:before {
+		background: linear-gradient(to bottom, #fff 0%,#fff 100%);
+		box-shadow: 0 0 0 1px rgba(0,0,0,0.5);
+	}
+	.toggle-checkbox:checked + & {
+		background: #289FED;
+		&:before {
+			left: 30px;
+		}
+        box-shadow:
+        5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF,
+        15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF,
+        25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+
+        
+	}
+}
+.toggle-checkbox {
+	position: absolute;
+	visibility: hidden;
+}
+.toggle-label {
+	position: relative;
+    font-weight: 700;
+	top: 7px;
+    font-size: 2.5rem;
+    color:#289FED;
+    
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 2px;
+
+}
+.toggle-label.off {
+
+    color:#474747;
+
+}
+.toggle-label.on {
+
+    color:#289FED;
+
+
+}

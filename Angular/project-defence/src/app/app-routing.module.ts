@@ -8,6 +8,7 @@ import { CreateComponent } from './interfaces/create/create.component';
 import { DetailsComponent } from './interfaces/details/details.component';
 import { EditComponent } from './interfaces/edit/edit.component';
 import { ErrorComponent } from './interfaces/error/error.component';
+import { GiftNftComponent } from './interfaces/gift-nft/gift-nft.component';
 import { HomeViewComponent } from './interfaces/home-view/home-view.component';
 import { LikedComponent } from './interfaces/liked/liked.component';
 import { LoginComponent } from './interfaces/login/login.component';
@@ -26,13 +27,15 @@ const routes: Routes = [
   {path: 'profile-list', component: ProfileLitComponent},
   {path: 'profile/:id/liked', component: LikedComponent},
   {path: 'profile/:id/owned', component: OwnedComponent},
-  {path: 'profile/:id/choose-pic', component:ChoosePicComponent},
+  {path: 'profile/:id/choose-pic', component:ChoosePicComponent, canActivate:[UserGuardService]},
+  {path: 'profile/:id/gift', component: GiftNftComponent, canActivate:[UserGuardService]},
+
   {path: 'profile/:id', component: ProfileComponent,},
-  {path: 'create', component: CreateComponent},
+  {path: 'create', component: CreateComponent, canActivate:[UserGuardService]},
   {path: 'catalog', component: CatalogComponent},
   {path: 'catalog/popular', component: PopularComponent},
   {path: 'catalog/details/:id', component: DetailsComponent},
-  {path: 'catalog/details/:id/edit', component: EditComponent},
+  {path: 'catalog/details/:id/edit', component: EditComponent, canActivate:[UserGuardService]},
   {path: '**', component: ErrorComponent},
 
 ];

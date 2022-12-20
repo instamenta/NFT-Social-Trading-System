@@ -4,7 +4,7 @@ import { NftService } from 'src/app/auth/nft.service';
 @Component({
   selector: 'app-catalog',
   templateUrl: './catalog.component.html',
-  styleUrls: ['./catalog.component.css']
+  styleUrls: ['./catalog.component.scss']
 })
 export class CatalogComponent implements OnInit{
   nftsData: any | null = null  
@@ -15,6 +15,8 @@ export class CatalogComponent implements OnInit{
   notFound: any = false
   notSearching:any = true;
 
+  checkboxValue: any = false;
+  checkboxText: any = true;
   constructor(private nftService: NftService) {}
 
   ngOnInit(): void {
@@ -43,6 +45,15 @@ export class CatalogComponent implements OnInit{
       } else {
         this.notSearching = true;
       }
+    }
+  }
+  switchHandler($event: any) {
+    console.log(this.checkboxValue)
+    console.log($event.target)
+    if(this.checkboxValue == true) {
+      this.checkboxText = true;
+    } else {
+      this.checkboxText = false;
     }
   }
 }

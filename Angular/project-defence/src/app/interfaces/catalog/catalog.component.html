@@ -5,13 +5,30 @@
     </div>
 </section>
 
-<div class="block">
+<div class="block" (click)="switchHandler($event)">
+    <label class="toggle">
+        
+        <span *ngIf="checkboxText == true" class="toggle-label on">all</span>
+        <span *ngIf="checkboxText == false" class="toggle-label off">all</span>
+
+        <span class="toggle-label">/</span>
+
+        <span *ngIf="checkboxText == false" class="toggle-label on ">only owned</span>
+        <span *ngIf="checkboxText == true" class="toggle-label off">only owned</span>
+
+        <input class="toggle-checkbox" type="checkbox" [(ngModel)]="checkboxValue">
+        <div class="toggle-switch"></div>
+    </label>
+    
     <input class="search" type="text" [(ngModel)]="searchText" (keyup)="search()">
     <button class="search">Search</button>
+
+    
+
 </div>
 
-<h2 *ngIf="notFound == false && notSearching == false" class="search-found">Nft's found = [ {{searchData.length}} ] </h2>
-<h2 *ngIf="notFound == false && notSearching == true" class="search-found">nft's list = [ {{nftsData.length}} ] </h2>
+<h2 *ngIf="searchData!=null &&searchData!=undefined && notFound == false && notSearching == false" class="search-found">Nft's found = [ {{searchData.length}} ] </h2>
+<h2 *ngIf="nftsData !=null &&notFound == false && notSearching == true" class="search-found">nft's list = [ {{nftsData.length}} ] </h2>
 <h2 *ngIf="notFound == true " class="search"> Nothing Found! </h2>
 
 <section class="container-huge">

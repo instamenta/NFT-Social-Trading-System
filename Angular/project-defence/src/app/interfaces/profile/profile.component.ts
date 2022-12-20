@@ -20,7 +20,10 @@ export class ProfileComponent implements OnInit {
   usernameValue: any;
   descriptionValue: any;
 
-  constructor(private userService: UserService, private route: ActivatedRoute,) { }
+  constructor(
+    private userService: UserService,
+    private route: ActivatedRoute,
+    ) { }
 
   ngOnInit(): void {
     this.params$ = this.route.params
@@ -55,4 +58,5 @@ export class ProfileComponent implements OnInit {
   editBioHandler() {
     this.userService.editUserDescription(this.userId,this.descriptionValue)
   }
+  
 }

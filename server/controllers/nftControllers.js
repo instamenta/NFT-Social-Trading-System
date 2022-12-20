@@ -65,7 +65,7 @@ const ownNft = async (req, res) => {
     const userData = await User.findOne({ username: user }).lean()
     const nftData = await Nft.findOne({ _id: nftId }).lean()
 
-    if (userData.ownedNft.includes(nftUrl) && nftData.owners.includes(user)) {
+    if (userData.ownedNft.includes(nftUrl) || nftData.owners.includes(user)) {
         await User.findOneAndUpdate({ username: user }, { $pull: { ownedNft: nftUrl } }).lean();
         const response = await Nft.findOneAndUpdate({ _id: nftId }, { $pull: { owners: user } }).lean();
         res.json(response)
@@ -104,4 +104,24 @@ const commentNtf = async (req, res) => {
     await NFT.save();
     res.json(NFT);
 }
-module.exports = { getNftUrl, uploadNft, catalogNft, detailsNft, editNft, deleteNft, likeNft, ownNft, latestNft, mostWantedNft, commentNtf }
+const giftNft = async (req, res) => {
+    const currentUser = req.body.currentUser
+    const user = req.body.user
+    const url = req.body.url
+
+console.log(user)
+
+    let userData = await User.findOne({ username: user})
+    let nftData = await Nft.findOne({ pic: url})
+    let nftId = nftData._id
+    if (userData.ownedNft.includes(url) && nftData.owners.includes(user)) {
+        
+        res.json({message: 'OWNED'})
+    } else {
+        await User.findOneAndUpdate({ username: user }, { $push: { ownedNft: url } }).lean();
+        const response = await Nft.findOneAndUpdate({ _id: nftId }, { $push: { owners: user } }).lean();
+        res.json(response)
+    }
+
+}
+module.exports = { getNftUrl, uploadNft, catalogNft, detailsNft, editNft, deleteNft, likeNft, ownNft, latestNft, mostWantedNft, commentNtf, giftNft}

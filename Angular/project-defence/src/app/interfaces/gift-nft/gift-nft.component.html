@@ -1,0 +1,15 @@
+<div class=" layer-font">
+    Gift Photo
+    <i class="fa-solid fa-hand-holding-heart"></i>
+</div>
+<div class="liked-container" *ngIf="nftArray">
+    <div *ngFor="let nft of nftArray" class="grid-component">
+        <img src="{{nft.pic}}" class="liked-image" (click)="giftNftHandler($event)"/>
+    </div>
+</div>
+<div class="empty">
+    <h1 class="empty">
+        No NFT's available!
+    </h1>
+</div>
+

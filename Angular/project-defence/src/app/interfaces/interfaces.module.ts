@@ -20,6 +20,7 @@ import { OwnedComponent } from './owned/owned.component';
 import { ChoosePicComponent } from './choose-pic/choose-pic.component';
 import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
+import { GiftNftComponent } from './gift-nft/gift-nft.component';
 
 
 
@@ -39,7 +40,8 @@ import { EditComponent } from './edit/edit.component';
     OwnedComponent,
     ChoosePicComponent,
     CreateComponent,
-    EditComponent
+    EditComponent,
+    GiftNftComponent
   ],
   imports: [
     CommonModule,
