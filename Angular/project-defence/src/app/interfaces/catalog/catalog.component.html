@@ -5,9 +5,9 @@
     </div>
 </section>
 
-<div class="block" (click)="switchHandler($event)">
-    <label class="toggle">
-        
+<div class="block" >
+    <label class="toggle" *ngIf="currentUserData != false" (click)="switchHandler($event)">
+
         <span *ngIf="checkboxText == true" class="toggle-label on">all</span>
         <span *ngIf="checkboxText == false" class="toggle-label off">all</span>
 
@@ -34,13 +34,13 @@
 <section class="container-huge">
     <div class="art-grid">
 
-        <ng-template [ngIf]="searchCriteria == false">
+        <ng-template [ngIf]="searchData.length <= 0">
             <div *ngFor="let nftData of nftsData" class="painting-container">
                 <img class="painting" src="{{nftData.pic}}" routerLink="/catalog/details/{{nftData._id}}" />
             </div>
         </ng-template>
 
-        <ng-template [ngIf]="searchCriteria == true">
+        <ng-template [ngIf]="searchData.length > 0">
             <div *ngFor="let nftData of searchData" class="painting-container">
                 <img class="painting" src="{{nftData.pic}}" routerLink="/catalog/details/{{nftData._id}}" />
             </div>
