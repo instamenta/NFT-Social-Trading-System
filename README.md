@@ -34,6 +34,9 @@ to create more immersive experience.
       click the link and see the list of all of the user's owned and liked NFT's, as a User you can 
       change your picture, description and username as long as they remain unique.
     
+    * Profile List - there both Users and Guests can see the list with every profile page,
+      and access their profile pages.
+    
     * Upload - Available only for Users after either Login or Register. This is from 
       where you can upload your own NFT. After uploading you are redirected to your 
       newly created details page of the NFT from where you can always edit it or delete it. 
@@ -54,17 +57,22 @@ to create more immersive experience.
     * Select Profile Picture - this is where Users can select their profile picture 
       from list of all the uploaded and owned NFT's by them.
     
-    * Most Wanted - Variation of the Catalog page accessible for both Users and Guests.
+    * Popular - Variation of the Catalog page accessible for both Users and Guests.
       The NFT's are dispalyed in different order starting from the most expensive and popular.
+    
+    
+    - Also every page except for the login in register there is animated list with all all
+      the subscribtion plans - "Bronze", "Silver" and "Gold" but for now there is no way to
+      subscribe.
     
 # The website has two parts:
 
-    * User part - After either Login or Register in the website you will be granted with access to:
+    * User - After either Login or Register in the website you will be granted with access to:
        - your personal profile where you can customize your profile picture, description,
          username and email to your liking.
        - the ability like and own NFT's uploaded by other users and create and edit your own NFT's.
        - cookie used for authorization.
 
-    * Guest part - As a guest you are given a lot of freedom, you can visit the 
+    * Guest - As a guest you are given a lot of freedom, you can visit the 
       homepage, catalog , the most wanted list, detail pages and users profiles
-      but you can't interact in any way.
+      but you can't like, own, upload, edit or comment the NFT's.
