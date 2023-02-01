@@ -14,6 +14,7 @@ to create more immersive experience.
 
     * Home - Animated welcoming page available for both Users and Guests with
       interactive part where the most popular NFT's are displayed.
+    ![home-image](Front-Page.png)
     
     * Catalog - The main part of the website from where both Users and Guest can see
       the list of every NFT uploaded to the website. The main catalog page inclues,
