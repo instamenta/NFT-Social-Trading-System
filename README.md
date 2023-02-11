@@ -104,6 +104,6 @@ ercontent.com/98179343/216162625-97af782d-62e2-4615-82d6-64ab0c853783.PNG)
 
 ## Contact
 
-Jan Milenkov - [git-gub]([[https://twitter.com/your_username](https://github.com/instamenta)](https://github.com/instamenta)) - instamenta@abv.bg
+Jan Milenkov - [https://github.com/instamenta](https://github.com/instamenta) - instamenta@abv.bg
 
-Project Link: [link](https://github.com/your_username/repo_name)
+Project Link: [(https://github.com/your_username/repo_name)](https://github.com/your_username/repo_name)
