@@ -106,4 +106,4 @@ ercontent.com/98179343/216162625-97af782d-62e2-4615-82d6-64ab0c853783.PNG)
 
 Jan Milenkov - [https://github.com/instamenta](https://github.com/instamenta) - instamenta@abv.bg
 
-Project Link: [(https://github.com/your_username/repo_name)](https://github.com/your_username/repo_name)
+Project Link - [https://github.com/instamenta/NFT-Social-Trading-System](https://github.com/instamenta/NFT-Social-Trading-System)
