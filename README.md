@@ -23,7 +23,9 @@ to create more immersive experience.
 
 
 ## Home 
-#### Animated welcoming page available for both Users and Guests with interactive part where the most popular NFT's are displayed.
+```diff
+- Animated welcoming page available for both Users and Guests with interactive part where the most popular NFT's are displayed.
+``` 
       
 ![Front-Page](https://user-images.githubusercontent.com/98179343/216161956-c5f8b56c-26b8-4407-9bb0-c65daa2da8f7.png)
 
