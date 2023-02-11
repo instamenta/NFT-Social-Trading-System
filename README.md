@@ -2,13 +2,12 @@
 
     * Frontend - Angular, HTML & CSS
     * Backend - Express.js, MongoDB
-    
-<ul>
-   <li>
-   ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
-   </li>
-</ul>
 
+### Built With
+
+This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+
+* ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 
     
 ## The idea behind the website
