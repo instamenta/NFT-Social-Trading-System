@@ -2,8 +2,10 @@
 
     * Frontend - Angular, HTML & CSS
     * Backend - Express.js, MongoDB
+##Made With
+![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
     
-# The idea behind the website
+## The idea behind the website
 
 Is to lead the users to interact with the NFT's,
 when hovering above the NFT it spins and expands which reveals the entire photo,
