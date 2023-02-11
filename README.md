@@ -1,4 +1,4 @@
-# "Artificial Slime" is a SPA Website with a frontend and backend side both made by me and build upon Node.js!
+# "Artificial Slime" is a SPA Website with a frontend and backend side both made by me!
 ### Built With
 
 * ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
