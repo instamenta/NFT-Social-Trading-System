@@ -17,12 +17,12 @@ Is to lead the users to interact with the NFT's,
 when hovering above the NFT it spins and expands which reveals the entire photo,
 also the data about it is not displayed unless you open the detais page, in order
 to create more immersive experience.
+
 # "Artificial Slime" has the following pages: 
 
 
 
-    * Home - Animated welcoming page available for both Users and Guests with
-      interactive part where the most popular NFT's are displayed.
+## Home - Animated welcoming page available for both Users and Guests with interactive part where the most popular NFT's are displayed.
       
 ![Front-Page](https://user-images.githubusercontent.com/98179343/216161956-c5f8b56c-26b8-4407-9bb0-c65daa2da8f7.png)
 
