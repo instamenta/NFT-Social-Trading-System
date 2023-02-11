@@ -3,9 +3,13 @@
     * Frontend - Angular, HTML & CSS
     * Backend - Express.js, MongoDB
     
-##Made With
+<ul>
+   <li>
+   ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+   </li>
+</ul>
 
-![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+
     
 ## The idea behind the website
 
