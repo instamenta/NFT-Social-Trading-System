@@ -1,16 +1,36 @@
 <div class="auth-form">
 	<div class="container-auth" id="container">
+		<!-- Form Data and Auth Container -->
 		<div class="form-container sign-in-container">
+			<!-- Form Data Handler -->
 			<form [formGroup]="form" (ngSubmit)="onSubmit()" class="auth">
+				
 				<h1 class="auth">Sign in</h1>
+
 				<div class="social-container">
-					<a class="auth" href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-					<a class="auth" href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-					<a class="auth" href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+					<a class="auth" href="https://github.com/instamenta" class="social">
+						<i class="fa-brands fa-github"></i>
+					</a>
+					<a class="auth" href="https://www.linkedin.com/in/jan-milenkov/" class="social">
+						<i class="fab fa-google-plus-g"></i>
+					</a>
+					<a class="auth" href="https://www.linkedin.com/in/jan-milenkov/" class="social">
+						<i class="fab fa-linkedin-in"></i>
+					</a>
 				</div>
-				<span class="auth">or use your account</span>
-				<input id="username" formControlName="username" name="username" class="auth " type="text"
-					placeholder="Username" />
+				<span class="auth">
+					or use your account
+				</span>
+				<!-- Username Input -->
+				<input 
+				id="username" 
+				formControlName="username" 
+				name="username" 
+				class="auth " 
+				type="text"
+				placeholder="Username" 
+				/>
+				<!-- ERROR Message Handler -->
 				<label *ngIf="
                 (form.get('username').hasError('required') ||
                 form.get('username').hasError('minlength') ||
@@ -18,35 +38,50 @@
                 && form.get('username').touched
                 " class="auth-error">
 					Username must be 3-20 symbols long!
-
 				</label>
-				<input id="password" formControlName="password" name="password" class="auth " type="password"
-					placeholder="Password" />
+				<!-- Password Input -->
+				<input 
+				id="password"
+				formControlName="password" 
+				name="password" 
+				class="auth " 
+				type="password"
+				placeholder="Password" 
+				/>
+				<!-- ERROR Message Handler -->
 				<label *ngIf="
-                (form.get('password').hasError('required') ||
-                form.get('password').hasError('minlength') )
-                && form.get('password').touched
+                	(form.get('password').hasError('required') ||
+                	form.get('password').hasError('minlength') )
+                	&& form.get('password').touched
                 " class="auth-error">
 					Password must be at least 6 symbols long!
 				</label>
-				<a class="auth" href="#">Forgot your password?</a>
+				<a class="auth" href="#">
+					Forgot your password?
+				</a>
 				<label *ngIf="loginError==true" class="login-error">
 					Invalid username or password!
 				</label>
-				<button class="auth">Sign In</button>
-
+				<button class="auth">
+					Sign In
+				</button>
 			</form>
 		</div>
-		
+		<!-- Redirector and Side View -->
 		<div class="overlay-container">
 			<div class="overlay">
 				<div class="overlay-panel overlay-right">
-					<h1 class="auth">Hello, Friend!</h1>
-					<p class="auth">Enter your personal details and start journey with us</p>
-					<a routerLink="/register" class="auth redirector" id="signUp">Sign Up</a>
+					<h1 class="auth">
+						Hello, Friend!
+					</h1>
+					<p class="auth">
+						Enter your personal details and start journey with us
+					</p>
+					<a routerLink="/register" class="auth redirector" id="signUp">
+						Sign Up
+					</a>
 				</div>
 			</div>
 		</div>
 	</div>
-
 </div>

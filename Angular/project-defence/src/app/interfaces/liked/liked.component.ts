@@ -17,17 +17,16 @@ export class LikedComponent implements OnInit {
   ) { }
   ngOnInit(): void {
     this.userService.getUserData()
-    .subscribe((data) => {
-      this.userData = data
-      this.userData.likedNft.forEach((element: any) => {
-        this.nftService.loadNft(element)
-        .subscribe(result => {
-          if (result != undefined) {
-            this.nftArray.push(result)
-          }
+      .subscribe((data: any) => {
+        data?.likedNft?.forEach((el: any) => {
+          this.nftService.loadNft(el)
+            .subscribe(res => {
+              if (res != undefined) {
+                this.nftArray.push(res)
+              }
+            })
         })
       })
-    })
   }
 }
 

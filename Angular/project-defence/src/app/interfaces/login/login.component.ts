@@ -10,10 +10,17 @@ import { UserService } from 'src/app/auth/user.service';
 })
 export class LoginComponent {
   form: any = this.formBuilder.group({
-    username: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
-    password: ['', [Validators.required, Validators.minLength(6)]],
+    username: ['', [
+      Validators.required,
+      Validators.minLength(3),
+      Validators.maxLength(20),
+    ]],
+    password: ['', [
+      Validators.required,
+      Validators.minLength(6),
+    ]],
   });
-  loginError: any;
+  loginError: Boolean = false;
   responseMessage: any;
   tokenValue: any;
 
@@ -31,12 +38,11 @@ export class LoginComponent {
       const username = usernameControl?.value
       const password = passwordControl?.value
       this.userService.loginUser(username, password)
-        .subscribe((response) => {
-          this.responseMessage = response
-          if (this.responseMessage.message) {
+        .subscribe((res : any) => {
+          if (res.message) {
             this.loginError = true
           } else {
-            this.cookieService.set('userData', this.responseMessage?.token)
+            this.cookieService.set('userData', res?.token)
             location.reload()
           }
         })

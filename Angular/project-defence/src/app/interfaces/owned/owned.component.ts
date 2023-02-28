@@ -13,31 +13,28 @@ export class OwnedComponent implements OnInit {
   userData: any;
   nftArray: any = [];
   params$: any;
-  userId: any;
+  userId: String = '';
+
   constructor(
     private userService: UserService,
     public nftService: NftService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
   ) { }
-
-
   ngOnInit(): void {
     this.params$ = this.route.params
-    .subscribe(params => {
-      this.userId = params["id"]
-    })
+      .subscribe(params => this.userId = params["id"]);
+
     this.userService.getUser(this.userId)
-    .subscribe((data) => {
-      this.userData = data
-      this.userData.ownedNft.forEach((element: any) => {
-        this.nftService.loadNftByLink(element)
-        .subscribe(result => {
-          if (result != undefined) {
-            this.nftArray.push(result)
-          }
+      .subscribe((data: any) => {
+        data?.ownedNft?.forEach((element: any) => {
+          this.nftService.loadNftByLink(element)
+            .subscribe(res => {
+              if (res != undefined) {
+                this.nftArray.push(res);
+              }
+            });
         })
       });
-    })
   }
 }
 

@@ -7,13 +7,12 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class GuestGuardService  implements CanActivate {
   constructor(private router: Router, private cookieService: CookieService) {}
-
   canActivate() {
     if (!this.cookieService.get('userData')) {
-      // Allow the route to be activated
+      // ALLOWS the ROUTE to be ACTIVATED
       return true;
     } else {
-      // Redirect the user to the login page
+      // REDIRECTS the USER to the LOGIN page
       this.router.navigate(['/']);
       return false;
     }

@@ -4,14 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&family=Calligraffitti&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
-
-
-/* test */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
-
-/* font-family: 'PT Serif', serif; Normal*/
-/* font-family: 'Bebas Neue', cursive; All Caps */
-/* font-family: 'Teko', sans-serif; Fancy Standart */
 
 html {
     --minty: #A2E3C4;
@@ -107,7 +100,6 @@ a {
     order: -20;
     animation: slide 20s linear infinite;
     animation-direction: alternate-reverse;
-
     background-position: bottom;
 }
 
@@ -190,28 +182,20 @@ section.personal-art {
     border: 3px solid #289FED ;
 
     transition-duration: 1s;
-
     animation-timing-function: linear;
-
     box-shadow:
-        5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF,
-        15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF,
-        25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-    box-shadow:
-        5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF,
-        15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF,
-        25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF,
+    15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF,
+    25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 
 .painting:hover {
     transform: rotate(360deg) scale(1.1);
     border-radius: 5px;
-
 }
 
 .paint .container-huge {
     height: 300vh;
-
 }
 
 .lettering {
