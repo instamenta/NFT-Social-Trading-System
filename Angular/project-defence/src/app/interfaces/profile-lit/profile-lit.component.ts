@@ -7,14 +7,13 @@ import { UserService } from 'src/app/auth/user.service';
   styleUrls: ['./profile-lit.component.css']
 })
 export class ProfileLitComponent implements OnInit{
+  
   userList: any;
   
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-    this.userService.getAllUsers().
-    subscribe((data) => {
-      this.userList = data
-    })
+    this.userList = this.userService.getAllUsers()
+    .subscribe(data => this.userList = data )
   }
 }

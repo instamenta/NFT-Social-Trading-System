@@ -9,10 +9,10 @@ import { UserService } from 'src/app/auth/user.service';
   styleUrls: ['./gift-nft.component.css']
 })
 export class GiftNftComponent {
-  params$: any;
-  userId: any;
+
+  userId: string = '';
   userData: any;
-  nftArray: any = [];
+  nftArray: any[] = [];
   currentUserData: any;
 
   constructor(
@@ -22,22 +22,18 @@ export class GiftNftComponent {
     private route: ActivatedRoute,
   ) { }
   ngOnInit(): void {
-    this.params$ = this.route.params
-      .subscribe((params) => {
-        this.userService.getUser(params["id"])
-          .subscribe((res) => {
-            this.userData = res
-          })
-      })
+    this.route.params
+      .subscribe(params => this.userService.getUser(params["id"])
+          .subscribe(res => this.userData = res ))
 
     this.userService.getUserData()
-      .subscribe((currentUserData) => {
-        this.currentUserData = currentUserData;
+      .subscribe(data => {
+        this.currentUserData = data;
         this.currentUserData?.ownedNft.forEach((url: any) => {
           this.nftService.loadNftByLink(url)
-            .subscribe(result => {
-              if (result != undefined && !this.userData.ownedNft?.includes(url)) {
-                this.nftArray.push(result)
+            .subscribe(nftData => {
+              if (nftData != undefined && !this.userData.ownedNft?.includes(url)) {
+                this.nftArray.push(nftData)
               }
             })
         })
@@ -45,11 +41,8 @@ export class GiftNftComponent {
 
   }
   giftNftHandler($event: any) {
-    const url = $event.target.src
+    const url = $event.target?.src;
     this.nftService.giftNft(this.currentUserData?._id, this.userData?.username, url)
-      .subscribe((res) => {
-        this.router.navigate(['/profile/' + this.userData._id])
-        console.log(res)
-      })
+      .subscribe(() => this.router.navigate(['/profile/' + this.userData?._id]))
   }
 }

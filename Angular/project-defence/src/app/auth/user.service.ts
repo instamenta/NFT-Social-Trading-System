@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
+import { UserModel } from 'src/assets/types';
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +20,9 @@ export class UserService {
     return this.http.get('http://localhost:3031/profile/' + id)
   }
   editUser(id: any, username: any, email: any) {
-    return this.http.post(`http://localhost:3031/profile/${id}/edit`, { username, email }).subscribe((result) => {
-    })
+    return this.http.post(`http://localhost:3031/profile/${id}/edit`, 
+    { username, email })
+    // .subscribe((result) => {})
   }
   editUserDescription(id: any, description: any) {
     return this.http.post(`http://localhost:3031/profile/${id}/edit-bio`, { description }).subscribe((result) => {
@@ -29,9 +31,7 @@ export class UserService {
 
   getUserData() {
     let token: any = this.cookieService.get('userData')
-    if (!token) {
-      token = "NOTOKEN"
-    }
+    if (!token) { token = "NOTOKEN" }
     return this.http.post('http://localhost:3031/users/decodeToken', { token })
 
   }
@@ -44,6 +44,6 @@ export class UserService {
 
   getUserName(username: any) {
     return this.http.get(`http://localhost:3031/profile/${username}/username`)
-
   }
+  
 }

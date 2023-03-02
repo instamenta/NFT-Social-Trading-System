@@ -12,7 +12,6 @@ export class PopularComponent implements OnInit {
   constructor(private nftService: NftService) { }
   
   ngOnInit(): void {
-    this.nftService.loadMostWantedAll()
-    .subscribe(data => this.nftsData = data)
+    this.nftsData = this.nftService.loadMostWantedAll()
   }
 }

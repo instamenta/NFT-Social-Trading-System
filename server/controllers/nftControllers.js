@@ -105,15 +105,12 @@ const commentNtf = async (req, res) => {
     res.json(NFT);
 }
 const giftNft = async (req, res) => {
-    const currentUser = req.body.currentUser
     const user = req.body.user
     const url = req.body.url
 
-console.log(user)
-
-    let userData = await User.findOne({ username: user})
-    let nftData = await Nft.findOne({ pic: url})
-    let nftId = nftData._id
+    const userData = await User.findOne({ username: user})
+    const nftData = await Nft.findOne({ pic: url})
+    const nftId = nftData._id
     if (userData.ownedNft.includes(url) && nftData.owners.includes(user)) {
         
         res.json({message: 'OWNED'})

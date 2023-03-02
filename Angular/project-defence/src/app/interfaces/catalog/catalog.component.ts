@@ -9,17 +9,16 @@ import { UserService } from 'src/app/auth/user.service';
 })
 export class CatalogComponent implements OnInit {
   nftsData: any | null = null
-
-  searchText: String = '';
-  searchCriteria: any = false;
-  searchData: any = [];
-  notFound: any = false
-  notSearching: any = true;
-
-  checkboxValue: any = false;
-  checkboxText: any = true;
-
   currentUserData: any = false;
+
+  searchText: string = '';
+  searchData: any = [];
+  searchCriteria: boolean = false;
+  notFound: boolean = false
+  notSearching: boolean = true;
+  checkboxValue: boolean = false;
+  checkboxText: boolean = true;
+
   constructor(
     private nftService: NftService,
     private userService: UserService,
@@ -27,31 +26,31 @@ export class CatalogComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.nftService.loadNfts()
-      .subscribe((data) => { this.nftsData = data })
+    this.nftsData = this.nftService.loadNfts()
+      // .subscribe(data => this.nftsData = data);
+
     this.userService.getUserData()
       .subscribe(userData => {
-        if (!userData.hasOwnProperty('username')) return
-        this.currentUserData = userData
+        if (!('username' in userData)) return;
+        this.currentUserData = userData;
       })
   }
   search() {
     this.searchData = this.nftsData.filter((data: any) => {
-      if (this.checkboxValue == true) {
-        return data.name.toLowerCase().includes(this.searchText.toLowerCase()) && !data.owners.includes(this.currentUserData.username)
-      } else {
+      if (this.checkboxValue === true) {
         return data.name.toLowerCase().includes(this.searchText.toLowerCase())
+          && !data.owners.includes(this.currentUserData.username);
+      } else {
+        return data.name.toLowerCase().includes(this.searchText.toLowerCase());
       }
     });
     if (this.searchData.length > 0) {
       this.searchCriteria = true
       this.notFound = false
 
-      if (this.searchText.length <= 0) {
-        this.notSearching = true;
-      } else {
-        this.notSearching = false;
-      }
+      this.searchText.length <= 0
+        ? this.notSearching = true
+        : this.notSearching = false;
     } else {
       this.searchCriteria = false
 
@@ -67,23 +66,23 @@ export class CatalogComponent implements OnInit {
     if (this.checkboxValue == true) {
       this.checkboxText = true;
       this.searchData = this.nftsData.filter((data: any) => {
-        if (this.searchText.length > 0) {
-          console.log(1)
-          return data.name.toLowerCase().includes(this.searchText.toLowerCase())
+        if (this.searchText?.length > 0) {
+          return data.name.toLowerCase().includes(this.searchText.toLowerCase());
+        } else {
+          return data.hasOwnProperty('name');
         }
-        console.log(2)
-        return data.hasOwnProperty('name')
       })
     } else {
       this.checkboxText = false;
       const dataArray = this.nftsData.filter((data: any) => {
         if (this.searchText.length > 0) {
-          return data.name.toLowerCase().includes(this.searchText.toLowerCase()) && !data.owners.includes(this.currentUserData.username)
+          return data.name.toLowerCase().includes(this.searchText.toLowerCase())
+            && !data.owners.includes(this.currentUserData.username);
+        } else {
+          return !data.owners.includes(this.currentUserData.username);
         }
-        return !data.owners.includes(this.currentUserData.username)
       })
-      this.searchData = dataArray
-      console.log(dataArray)
+      this.searchData = dataArray;
     }
   }
 }

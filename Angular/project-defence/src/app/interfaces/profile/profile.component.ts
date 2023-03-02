@@ -11,47 +11,48 @@ export class ProfileComponent implements OnInit {
   userData: any;
   currentUserData: any;
 
-  isOwner: Boolean = false;
-  isGuest: Boolean = true;
-  
-  userId: String = '';
-  params$: any;
+  isOwner: boolean = false;
+  isGuest: boolean = true;
 
-  usernameValue: String = '';
-  descriptionValue: String = '';
+  userId: string = '';
 
-  constructor( private userService: UserService, private route: ActivatedRoute ) { }
+  usernameValue: string = '';
+  descriptionValue: string = '';
+
+  constructor(private userService: UserService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.params$ = this.route.params?.subscribe(params => {
-      this.userId = params["id"]
-    })
-    this.userService.getUser(this.userId).subscribe(data => {
+    this.route.params?.subscribe
+      (params => this.userId = params["id"]);
 
-      if(data.hasOwnProperty('_id') == false) return;
-      this.userData = data
-      this.usernameValue = this.userData.username
-      this.descriptionValue = this.userData.bio
+    this.userService.getUser(this.userId)
+      .subscribe(data => {
+        if (data.hasOwnProperty('_id') === false) return;
+        this.userData = data;
+        this.usernameValue = this.userData?.username;
+        this.descriptionValue = this.userData?.bio;
 
-      this.userService.getUserData().subscribe((res) => {
-        if(res.hasOwnProperty('_id') == false) return;
-        this.isGuest = false
-        this.currentUserData = res
+        this.userService.getUserData()
+          .subscribe(res => {
+            if (res.hasOwnProperty('_id') === false) return;
+            this.isGuest = false
+            this.currentUserData = res
 
-        if ( !this.currentUserData?.message
-          && this.userData?.username == this.currentUserData?.username
-          ) { this.isOwner = true } 
+            if (!this.currentUserData?.message
+              && this.userData?.username == this.currentUserData?.username) {
+              this.isOwner = true
+            }
+          })
       })
-    })
   }
-  
+
   editNameHandler() {
     this.userService.editUser
-    (this.userId, this.usernameValue, this.userData.email)
+      (this.userId, this.usernameValue, this.userData.email)
   }
   editBioHandler() {
     this.userService.editUserDescription
-    (this.userId,this.descriptionValue)
+      (this.userId, this.descriptionValue)
   }
-  
+
 }

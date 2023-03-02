@@ -12,7 +12,6 @@ export class HomeViewComponent implements OnInit {
   constructor(private nftService: NftService) { }
 
   ngOnInit(): void {
-    this.nftService.loadMostWanted(6)
-      .subscribe(nftsData => this.nftsData = nftsData)
+    this.nftsData = this.nftService.loadMostWanted(6)
   }
 }

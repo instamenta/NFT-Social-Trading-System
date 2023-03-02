@@ -9,6 +9,7 @@ import { UserService } from 'src/app/auth/user.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  
   form: any = this.formBuilder.group({
     username: ['', [
       Validators.required,
@@ -20,7 +21,7 @@ export class LoginComponent {
       Validators.minLength(6),
     ]],
   });
-  loginError: Boolean = false;
+  loginError: boolean = false;
   responseMessage: any;
   tokenValue: any;
 

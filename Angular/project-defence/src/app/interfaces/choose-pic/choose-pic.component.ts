@@ -9,8 +9,7 @@ import { UserService } from 'src/app/auth/user.service';
   styleUrls: ['./choose-pic.component.css']
 })
 export class ChoosePicComponent {
-  params$:any;
-  userId:any;
+  userId: string = '';
   userData: any;
   nftArray: any = [];
   
@@ -23,19 +22,17 @@ export class ChoosePicComponent {
 
 
   ngOnInit(): void {
-    this.params$ = this.route.params
-    .subscribe((params) => {
-      this.userId = params["id"]
-    })
+    this.route.params
+    .subscribe(params => this.userId = params["id"])
     
     this.userService.getUser(this.userId)
-    .subscribe((result) => {
-      this.userData = result
+    .subscribe(data => {
+      this.userData = data
       this.userData.ownedNft.forEach((url: any) => {
         this.nftService.loadNftByLink(url)
-        .subscribe(result => {
-          if (result != undefined) {
-            this.nftArray.push(result)
+        .subscribe(nftData => {
+          if (nftData != undefined) {
+            this.nftArray.push(nftData)
           }
         })
       })

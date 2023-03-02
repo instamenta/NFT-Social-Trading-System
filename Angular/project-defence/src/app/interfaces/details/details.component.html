@@ -3,28 +3,28 @@
         <div class="details-grid">
             
             <div class='details-pic-container'>
-                <a><img class="details-pic" src="{{nftData.pic}}" /></a>
+                <a><img class="details-pic" src="{{nftData?.pic}}" /></a>
             </div>
 
             <div class="details-info-container">
                 <div class="details-top">
-                    <h1 class="details-name">{{nftData.name}}</h1>
-                    <h1 class="details-info">{{nftData.info}}</h1>
+                    <h1 class="details-name">{{nftData?.name}}</h1>
+                    <h1 class="details-info">{{nftData?.info}}</h1>
                 </div>
 
                 <div>
-                    <h1 class="details-description">"{{nftData.description}}"</h1>
+                    <h1 class="details-description">"{{nftData?.description}}"</h1>
                     <h1 class="details-creator">
                         Made By:
-                        <a class="profile-link" routerLink="/profile/{{creatorData._id}}">
-                            {{creatorData.username}}
+                        <a class="profile-link" routerLink="/profile/{{creatorData?._id}}">
+                            {{creatorData?.username}}
                         </a>
                     </h1>
                     <h1 class="details-creator">
-                        Likes:{{nftData.likes.length}} ♥
+                        Likes:{{nftData?.likes?.length}} ♥
                     </h1>
                     <h1 class="details-creator">
-                        Owners:{{nftData.owners.length}} #
+                        Owners:{{nftData?.owners?.length}} #
                     </h1>
                 </div>
 
@@ -39,7 +39,7 @@
                     </button>
 
                     <button *ngIf="isCreator == true" class="action-button"
-                        routerLink="/catalog/details/{{nftData._id}}/edit">
+                        routerLink="/catalog/details/{{nftData?._id}}/edit">
                         Edit
                     </button>
 
@@ -48,7 +48,7 @@
                     </button>
                 </div>
                 <div class="price-container">
-                    <h1 class="details-price">${{nftData.price}}</h1>
+                    <h1 class="details-price">${{nftData?.price}}</h1>
                 </div>
             </div>
             <div class="details-btn-container">
@@ -57,15 +57,15 @@
     </form>
 </div>
 <div class="comment-list" *ngIf="commentList != false">
-    <h1 class="comment-count">Comments = [ {{commentList.length}} ]</h1>
+    <h1 class="comment-count">Comments = [ {{commentList?.length}} ]</h1>
     <div class="comment-list-container" *ngFor="let comment of commentList">
         <div class="comment">
-            <div class="comment-data" (click)="commentRelocationHandler($event)" id="{{comment.author}}">
+            <div class="comment-data" (click)="commentRelocationHandler($event)" id="{{comment?.author}}">
                 <div class="comment-aligner" >
-                    <img class="comment-img" src="{{comment.pic}}" />
-                    <span class="comment-name">{{comment.author}}</span>
+                    <img class="comment-img" src="{{comment?.pic}}" />
+                    <span class="comment-name">{{comment?.author}}</span>
                 </div>
-                <span class="comment-date">{{comment.date | date: 'd/MMM/yy, hh:mm'}}</span>
+                <span class="comment-date">{{comment?.date | date: 'd/MMM/yy, hh:mm'}}</span>
 
             </div>
 

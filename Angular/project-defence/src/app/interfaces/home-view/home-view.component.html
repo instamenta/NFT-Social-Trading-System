@@ -44,7 +44,7 @@
 
 <section class="container-huge">
     <div class="art-grid">
-        <div *ngFor="let nftData of nftsData" class="painting-container">
+        <div *ngFor="let nftData of nftsData | async" class="painting-container">
             <img routerLink="/catalog/details/{{nftData._id}}" class="painting" src="{{nftData.pic}}" />
         </div>
     </div>

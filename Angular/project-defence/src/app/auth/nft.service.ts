@@ -10,7 +10,11 @@ export class NftService {
     return this.http.get<any>('http://localhost:3031/nft/catalog');
   }
   loadNft(id : any) {
-    return this.http.get<any>('http://localhost:3031/nft/catalog/' + id);
+    
+    const data =this.http.get<any>('http://localhost:3031/nft/catalog/' + id);
+    data.subscribe(res => console.log(res))
+    return data
+
   }
   loadMostWanted(index: any) {
     return this.http.get<any>('http://localhost:3031/nft/catalog/most-wanted/' + index);

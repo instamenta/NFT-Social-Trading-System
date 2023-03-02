@@ -3,7 +3,7 @@
     <i class="fa-sharp fa-solid fa-palette"></i>
 </div>
 <div class="liked-container">
-    <div *ngFor="let nft of nftArray" class="grid-component">
+    <div *ngFor="let nft of nftArray " class="grid-component">
         <img src="{{nft.pic}}" class="liked-image" (click)="changePicHandler($event)"/>
     </div>
 </div>
