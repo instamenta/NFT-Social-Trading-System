@@ -145,7 +145,7 @@ all the subscribtion plans - "Bronze", "Silver" and "Gold" but for now there is 
 * the most wanted list, 
 * detail pages 
 * users profiles
-### but you can't 
+### but you can't: 
 * like
 * own
 * upload
