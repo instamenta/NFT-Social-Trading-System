@@ -139,13 +139,13 @@ all the subscribtion plans - "Bronze", "Silver" and "Gold" but for now there is 
 * subscribe.
  
 ## Guest 
-! As a guest you are given a lot of freedom, you can visit the:
+### As a guest you are given a lot of freedom, you can visit the:
 * homepage
 * catalog , 
 * the most wanted list, 
 * detail pages 
 * users profiles
-- but you can't 
+### but you can't 
 * like
 * own
 * upload
