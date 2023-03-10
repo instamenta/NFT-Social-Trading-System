@@ -19,8 +19,6 @@ when hovering above the NFT it spins and expands which reveals the entire photo,
 also the data about it is not displayed unless you open the detais page, in order
 to create more immersive experience.
 
-# ProjectDefence
-
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.1.
 
 ## Development server
@@ -32,8 +30,6 @@ Run `node ./index.js` for the backend server to start at port 3031.
 `Artificial Slime` is a NFT social platform.
 
 # "Artificial Slime" has the following pages: 
-
-
 
 ## Home 
 ```diff
