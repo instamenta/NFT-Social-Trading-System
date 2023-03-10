@@ -27,8 +27,6 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 Run `node ./index.js` for the backend server to start at port 3031.
 
-`Artificial Slime` is a NFT social platform.
-
 # "Artificial Slime" has the following pages: 
 
 ## Home 
