@@ -159,6 +159,7 @@ section.personal-art {
 
 .art-grid {
     margin: 100px;
+    gap: 3rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
@@ -578,3 +579,30 @@ div.hero-container {
 
     background: #FFD700;
 }
+
+
+
+@media screen and (max-width: 1400px) {
+    .art-grid {
+        margin: 60px;
+        gap: 2.5rem;
+
+        grid-template-columns: 1fr 1fr !important;
+    }
+    .body {
+        background-color: black;
+    }
+  }
+  
+  /* On screens that are 600px or less, set the background color to olive */
+  @media screen and (max-width: 800px) {
+    .art-grid {
+        margin: 30px;
+        gap: 0rem;
+
+        grid-template-columns: 1fr !important;
+    }
+    .body {
+        background-color: red;
+    }
+  }
